@@ -1,0 +1,15 @@
+class Solution:
+    # Return a list containing the inorder traversal of the given tree
+    def postOrder(self,root):
+        # code here
+        if root is None:
+            return []
+        st = [root]
+        post= []
+        while st: 
+            node = st.pop()
+            if node is not None:
+                post.append(node.data)
+                st.append(node.left)
+                st.append(node.right)
+        return post[::-1]
