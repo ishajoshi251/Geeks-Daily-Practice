@@ -1,0 +1,13 @@
+class Solution:
+    def majorityElement(self, A, N):
+        #Your code here
+        dict1 = {}
+        for i in A:
+            if i in dict1:
+                dict1[i] += 1
+            else:
+                dict1[i] = 1
+        for key , values in dict1.items():
+            if values > N/2:
+                return key
+        return -1
