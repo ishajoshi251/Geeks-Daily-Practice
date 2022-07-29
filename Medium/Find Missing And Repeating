@@ -1,0 +1,9 @@
+count = 0 
+        repeating = 0 
+        missing = sum(list(range(1,n+1))) - sum(set(arr))
+        for i in arr:
+            if arr.count(i)>1:
+                repeating = i
+            
+            
+        return (repeating,missing)
