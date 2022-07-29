@@ -1,0 +1,8 @@
+array.sort()
+        ans =1
+        for i in array:
+            if ans < i:
+                return ans
+            else:
+                ans += i
+        return ans
