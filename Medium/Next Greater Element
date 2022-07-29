@@ -1,0 +1,14 @@
+class Solution:
+    def nextLargerElement(self,arr,n):
+        #code here
+        stack = []
+        ans = []
+        for i in arr[::-1]:
+            while len(stack) != 0 and stack[-1] < i:
+                stack.pop()
+            if len(stack) == 0:
+                ans.append(-1)
+            else:
+                ans.append(stack[-1])
+            stack.append(i)
+        return ans[::-1]
