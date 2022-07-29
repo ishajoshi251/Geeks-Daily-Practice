@@ -1,0 +1,15 @@
+class Solution:
+    def inOrder(self, root):
+        # code here
+        if not root: return []
+        stack = []
+        result = []
+        
+        while stack or root:
+            while root:
+                stack.append(root)
+                root = root.left 
+            root = stack.pop()
+            result.append(root.data)
+            root = root.right
+        return result
