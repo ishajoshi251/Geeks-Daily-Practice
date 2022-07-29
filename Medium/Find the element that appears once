@@ -1,0 +1,21 @@
+class Solution:
+    def search(self, A, N):
+        # your code here
+        
+       low=0
+       high=N-1
+       while(low<=high):
+           if(low==high):
+               return(A[low])
+           mid=(low+high)//2
+           if(mid%2==0):
+               if(A[mid]==A[mid+1]):
+                   low=mid+2
+               else:
+                   high=mid
+           else:
+               if(A[mid]==A[mid-1]):
+                   low=mid+1
+               else:
+                   high=mid-1
+       return(-1)
