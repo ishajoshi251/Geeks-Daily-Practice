@@ -1,0 +1,26 @@
+def countRev (s):
+    # your code here
+   #odd case
+    if len(s)%2 != 0:
+        return -1
+   # valid
+    stack = []
+    for i in s:
+        if i == '{':
+           stack.append(i)
+        else:
+            if len(stack)!=0 and stack[-1] == '{':
+                stack.pop()
+            else:
+                stack.append(i)
+        
+    #invalid b = open a close
+    a,b = 0, 0
+    while stack:
+        if stack[-1] == '{':
+            b += 1
+        else:
+            a += 1
+        stack.pop()
+    ans = (a+1)//2 + (b+1)//2
+    return ans  
