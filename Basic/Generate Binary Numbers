@@ -1,0 +1,19 @@
+def generate(N):
+    # code here
+    q = []
+    q.append("1")
+    if N == 1:
+        return q
+    for i in range(0,N):
+        val = q[i]
+        
+        n1 = val + "0"
+        q.append(n1)
+        if len(q) == N:
+            break
+        n2 = val + "1"
+        q.append(n2)
+        if len(q) == N:
+            break
+        
+    return q
