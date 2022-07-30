@@ -1,0 +1,7 @@
+class Solution:
+    def findOnce(self,arr : list, n : int):
+        # Complete this function
+        count = 0
+        for i in arr:
+            if arr.count(i) == 1:
+                return i
