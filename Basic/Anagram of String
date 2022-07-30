@@ -1,0 +1,15 @@
+def remAnagram(str1,str2):
+    
+    #add co
+    str1 = list(str1)
+    str2 = list(str2)
+    i = 0
+    n = len(str1)
+    while i < n:
+        if str1[i] in str2:
+            str2.remove(str1[i])
+            str1.pop(i)
+            n -=1
+        else:
+            i +=1
+    return len(str1) + len(str2)
