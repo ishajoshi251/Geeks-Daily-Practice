@@ -1,0 +1,8 @@
+class Solution:
+    def Maximize(self, a, n): 
+        # Complete the function
+        sum1 = 0
+        a.sort()
+        for i in range(n):
+            sum1 += a[i]*i
+        return sum1 % ((10**9 )+ 7)   
