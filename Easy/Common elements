@@ -1,0 +1,25 @@
+class Solution:
+    def commonElements (self,A, B, C, n1, n2, n3):
+        # your code here
+       common =[]
+       
+       i,j,k=0,0,0
+       while i<n1 and j<n2 and k<n3:
+           if A[i]==B[j]==C[k]:
+               if A[i] not in common:
+                   common.append(A[i])
+               i+=1
+               j+=1
+               k+=1
+               
+           else:
+               minn = min([A[i],B[j],C[k]])
+               if A[i]==minn:
+                   i+=1
+               elif B[j]==minn:
+                   j+=1
+               else:
+                   k+=1
+                   
+       
+       return common 
