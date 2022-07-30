@@ -1,0 +1,20 @@
+class Solution:
+    def isGoodorBad(self, S):
+        # code here 
+        count = 0 #vowel
+        count1=0  #consonant
+        v ='aeiou'
+        for i in S:
+            if i in v or i=='?':
+                count += 1
+                if count >5:
+                   return 0
+            else:
+                count =0 
+            if i not in v or i == '?':
+                count1 +=1
+                if count1>3:
+                    return 0
+            else:
+                count1 =0 
+        return 1
