@@ -1,0 +1,16 @@
+class Solution:
+    def extractMaximum(self,S): 
+        # code here
+        num = 0
+        max1 = -1
+        for i in S:
+            if i.isdigit():
+                num = int(num*10) + int(i)
+                max1 = max(max1,num)
+                
+            else:
+                num = 0
+            
+            
+            
+        return max1
