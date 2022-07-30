@@ -1,0 +1,14 @@
+class Solution:    
+    #Function to return the count of number of elements in union of two arrays.
+    def doUnion(self,a,n,b,m):
+        
+        #code here
+        set1 = set()
+        count = 0
+        for i in range(0,n):
+            set1.add(a[i])
+        for i in range(0,m):
+            set1.add(b[i])
+        for i in range(0,len(set1)):
+            count += 1
+        return count
