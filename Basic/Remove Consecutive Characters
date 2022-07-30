@@ -1,0 +1,9 @@
+class Solution:
+    def removeConsecutiveCharacter(self, S):
+        # code h{ere
+        s = ""
+        for i in range(len(S)-1):
+            if S[i]!= S[i+1]:
+               s += S[i]
+        s += S[-1]
+        return s
