@@ -1,0 +1,26 @@
+def pairWiseConsecutive(l):
+    '''
+    if len(l) == 1:
+        return True
+    if len(l) % 2 != 0:
+       l.pop()
+    
+    for i in range(0,len(l),2):
+        
+        if l[i+1] - l[i] == 1:
+            continue
+        else:
+            return False
+    return True   
+    '''
+    if len(l) == 1 and len(l) % 2!= 0:
+          l.pop()
+    x = l[-1]
+    l.pop()
+    while len(l):
+        if l[-1] != x-1 and l[-1] != x+1:
+            return False
+        else:
+            x = l[-1]
+            l.pop()
+    return True
