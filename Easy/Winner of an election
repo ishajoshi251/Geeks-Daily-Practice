@@ -1,0 +1,23 @@
+class Solution:
+    
+    #Complete this function
+    
+    #Function to return the name of candidate that received maximum votes.
+    def winner(self,arr,n):
+        # Your code here
+        # return the name of the winning candidate and the votes he recieved
+        dict1 = {}
+        for i in arr:
+            if i not in dict1:
+                dict1[i] = 0
+            dict1[i] += 1
+            
+        max1 = max(dict1.values())
+        winner =[]
+        for keys,i in dict1.items():
+            if max1 == i:
+                winner.append(keys)
+        
+        return min(winner) , max1
+            
+                
