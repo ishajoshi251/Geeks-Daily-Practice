@@ -1,0 +1,16 @@
+def push(arr,n): 
+    
+    #return a queue with all elements of arr inserted in it
+    
+    queue = []
+    for i in arr: 
+        queue.append(i)
+    return queue
+    
+def _pop(q):
+    
+    #dequeue elements and print them
+    if len(q)==0:
+        return -1
+    while q:
+        print(q.pop(0), end =" ")
