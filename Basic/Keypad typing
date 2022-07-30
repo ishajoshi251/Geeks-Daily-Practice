@@ -1,0 +1,22 @@
+def printNumber(s,n):
+   
+    #CODE HERE
+    str1 = ""
+    for i in s:
+        if i == 'a' or i == 'b' or i == 'c':
+            str1 += '2'
+        elif i == 'd' or i == 'e' or i == 'f':
+            str1 += '3'
+        elif i == 'g' or i == 'h' or i == 'i':
+            str1 += '4'
+        elif i == 'j' or i == 'k' or i == 'l':
+            str1 += '5'
+        elif i == 'm' or i == 'n' or i == 'o':
+            str1 += '6'
+        elif i == 'p' or i == 'q' or i == 'r' or i == 's':
+            str1 += '7'
+        elif i == 't' or i == 'u' or i == 'v':
+            str1 += '8'
+        elif i == 'w' or i == 'x' or i == 'y' or i=='z':
+            str1 += '9'
+    return str1  
