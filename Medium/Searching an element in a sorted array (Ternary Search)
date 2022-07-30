@@ -1,0 +1,25 @@
+int ternarySearch(int arr[], int N, int k) 
+   { 
+     int l=0,h=N-1;
+     while(l<=h){
+     int mid1=l+(h-l)/3;
+      int mid2=h-(h-l)/3;
+      if(arr[mid1]==k){
+          return 1;
+      }
+      if(arr[mid2]==k){
+          return 1;
+      }
+      if(arr[mid1]>k){
+          h=mid1-1;
+      }
+        if(arr[mid2]<k){
+             l=mid2+1;
+         }
+         if(arr[mid1]<k and arr[mid2]>k){
+             l=mid1+1;
+             h=mid2-1;
+         }
+     }
+         return -1;
+   }
