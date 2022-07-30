@@ -1,0 +1,9 @@
+class Solution:
+    def BoundaryElements(self, matrix):
+        # Code here
+        arr = []
+        for i in range(0,len(matrix)):
+            for j in range(0,len(matrix)):
+                if i == 0 or j ==0 or i== n-1 or j == n-1:
+                    arr.append(matrix[i][j])
+        return arr
