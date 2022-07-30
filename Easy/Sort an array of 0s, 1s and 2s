@@ -1,0 +1,21 @@
+class Solution:
+    def sort012(self,arr,n):
+        # code here
+        a = []
+        one = 0
+        two =0
+        zero = 0
+        for i in arr:
+            if i == 0:
+                zero +=1
+            if i == 1:
+                one +=1
+            if i == 2:
+                two +=1
+        for i in range (0,zero):
+            a.append(arr[i])
+        for i in range (zero,one+zero):
+            a.append(arr[i])
+        for i in range (one +zero,n):
+            a.append(arr[i])
+        return a
