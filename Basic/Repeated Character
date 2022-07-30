@@ -1,0 +1,10 @@
+class Solution:
+    def firstRep(self, s):
+        # code here
+        l=[]
+        for i in s:
+            if s.count(i) >1:
+                l.append(i)
+                return l[0]
+            
+        return -1
