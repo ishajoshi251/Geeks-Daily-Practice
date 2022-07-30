@@ -1,0 +1,18 @@
+
+class Solution:
+    
+    #Function is to check whether two strings are anagram of each other or not.
+    def isAnagram(self,a,b):
+        #code here
+        A = []
+        B = []
+        for i in a:
+            A.append(i)
+        for i in b:
+            B.append(i)
+        A.sort()
+        B.sort()
+        if A==B:
+            return 1
+        else:
+            return 0
