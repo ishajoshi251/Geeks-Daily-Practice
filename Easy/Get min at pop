@@ -1,0 +1,17 @@
+def _push(a,n):
+
+    # code here
+    stack = []
+    for i in range(n):
+        stack.append(a[i])
+    return stack   
+
+#Function to print minimum value in stack each time while popping.    
+def _getMinAtPop(stack):
+    
+    # code here
+    for i in range(len(stack)):
+        mini = min(stack)
+        stack.pop()
+        print( mini , end=" ")
+        
