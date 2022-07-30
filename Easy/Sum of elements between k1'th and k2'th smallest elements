@@ -1,0 +1,9 @@
+class Solution:
+    def sumBetweenTwoKth(self, A, N, K1, K2):
+        # Your code goes here
+        A.sort()
+        sum1 = 0
+        for i in range(K1,K2-1):
+            sum1 += A[i]
+        return sum1    #1 2  3 4  5  6   7   
+                       #4 8 10 12 14 20 22
