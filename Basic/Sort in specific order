@@ -1,0 +1,15 @@
+class Solution:
+    def sortIt(self, arr, n):
+        #code here.
+        arr.sort()
+        a = []
+        for i in arr:
+            if i%2 == 1 :
+                a.append(i)
+        a = a[::-1]
+        for i in arr:
+            if i%2 == 0:
+                a.append(i)
+        for i in range(n):
+            arr[i] = a[i]
+        return arr
