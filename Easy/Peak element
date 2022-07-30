@@ -1,0 +1,19 @@
+class Solution:   
+    def peakElement(self,arr, n):
+        # Code here
+        max1 = max(arr)
+        return arr.index(max1)
+        int peakElement(int arr[], int n)
+{
+   // Your code here
+   int i;
+   int indx=0;
+   for(i=1;i<n;i++)
+   {
+       if(arr[indx] < arr[i])
+       {
+           indx=i;
+      }
+    }
+    return indx;
+}
