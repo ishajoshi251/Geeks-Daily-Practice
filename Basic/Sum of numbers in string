@@ -1,0 +1,14 @@
+class Solution:
+    
+    #Function to calculate sum of all numbers present in a string.
+    def findSum(self,s):
+        #code here
+        sum = 0
+        num =0
+        for i in s:
+            if i.isdigit():
+                num = num*10 + int(i)
+            else:
+                sum += num
+                num = 0
+        return sum + num
