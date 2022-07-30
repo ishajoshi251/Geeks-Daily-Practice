@@ -1,0 +1,9 @@
+class Solution:
+    def removeChars (ob, string1, string2):
+        # code here 
+        str1 =""
+        for i in string1:
+            if i not in string2:
+                str1 += i
+        return str1
+        
