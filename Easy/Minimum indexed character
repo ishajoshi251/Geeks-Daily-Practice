@@ -1,0 +1,13 @@
+class Solution:
+    
+    #Function to find the minimum indexed character.
+    def minIndexChar(self,Str, pat): 
+        #code here
+        
+        dict1 = {}
+        for i in range(0,len(pat)):
+            dict1[pat[i]] = i
+        for i in Str:
+            if i in dict1:
+                return Str.index(i)
+        return -1
