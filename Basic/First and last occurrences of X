@@ -1,0 +1,12 @@
+class Solution: 
+    def firstAndLast(self, arr, n, x): 
+        # Code here
+        li = []
+        if x not in arr:
+            li.append(-1)
+            return li
+        a = arr[::-1]
+        return arr.index(x), len(a) - a.index(x) -1
+            # 4 3 3 1
+              0 1 2 3
+                       4-1-1
