@@ -1,0 +1,10 @@
+class Solution:
+	def minimum_difference(self, nums):
+		# Code here
+        nums.sort()
+        diff = 0
+        mindiff = 100000000000
+        for i in range(len(nums)-1):
+            diff = nums[i+1] - nums[i]
+            mindiff = min(diff,mindiff)
+        return mindiff
