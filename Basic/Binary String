@@ -1,0 +1,10 @@
+class Solution:
+    
+    #Function to count the number of substrings that start and end with 1.
+    def binarySubstring(self,n,s):
+        #code her
+        count = 0
+        for i in s:
+            if i == '1':
+                count +=1
+        return count*(count-1)//2
