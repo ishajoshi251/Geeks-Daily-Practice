@@ -1,0 +1,16 @@
+class Solution:
+    def sortedCount(self,N,M,Mat):
+        #code here
+        
+        ans = 0
+        for i in range(0,N):
+            sort = 0
+            for j in range(0,M-1):
+                
+                if Mat[i][j] > Mat[i][j+1]:
+                    sort -= 1
+                if Mat[i][j] < Mat[i][j+1]:
+                    sort += 1
+            if sort == M-1 or sort == 1-M:
+                ans += 1
+        return ans
