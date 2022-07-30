@@ -1,0 +1,10 @@
+class Solution:
+    
+    #Function to find transpose of a matrix.
+    def transpose(self,matrix, n):
+        for i in range(0,n):
+            for j in range(i,n):
+                temp = matrix[i][j]
+                matrix[i][j] = matrix[j][i]
+                matrix[j][i] = temp
+        return matrix
