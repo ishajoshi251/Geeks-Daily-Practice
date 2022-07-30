@@ -1,0 +1,5 @@
+class Solution:
+	def findSum(self, X, Y):
+		# code here
+     sum1 = int(X) + int(Y)
+     return sum1
