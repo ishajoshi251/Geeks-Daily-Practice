@@ -1,0 +1,10 @@
+class Solution:
+	def hasArrayTwoCandidates(self,arr, n, x):
+		# code here
+	    s = set()
+		
+		for i in arr:
+		    if (x-i) in s:
+		        return True
+            s.add(i)
+        return False
