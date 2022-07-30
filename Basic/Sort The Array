@@ -1,0 +1,7 @@
+class Solution:
+    def sortArr(self, arr, n): 
+        #code here
+        y = list(arr)
+        y.sort()
+        
+        return  y
