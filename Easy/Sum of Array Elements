@@ -1,0 +1,4 @@
+def sumElement(arr,n):
+    #code here
+    sum1 = sum(arr)
+    return sum1
