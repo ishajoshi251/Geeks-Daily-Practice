@@ -1,0 +1,8 @@
+class Solution:
+    def modify(self, s):
+        # code here
+        for i in s:
+            if i.islower():
+                return s.lower()
+            if i.isupper():
+                return s.upper()
