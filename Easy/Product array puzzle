@@ -1,0 +1,19 @@
+class Solution:
+    def productExceptSelf(self, nums, n):
+        #code here
+       ans=[]
+       p=1
+       k=1
+       if nums.count(0)<=1:
+           for i in range(n):
+               p=p*nums[i]
+               if nums[i]!=0:
+                   k=k*nums[i]
+           for i in range(n):
+               if nums[i]!=0:
+                   ans.append(p//nums[i])
+               else:
+                   ans.append(k)
+           return ans
+       else:
+           return [0]*n
