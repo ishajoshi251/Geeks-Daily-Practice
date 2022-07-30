@@ -1,0 +1,10 @@
+def reverse(S):
+    
+    #Add code here
+    stack = []
+    for i in  S:
+        stack.append(i)
+    s = ""
+    while stack:
+        s += stack.pop()
+    return s
