@@ -1,0 +1,21 @@
+class Solution{
+  public:
+    int MissingNumber(vector<int>& array, int n) {
+        // Your code goes here
+        int i;
+       
+        int ans;
+        sort(array.begin(),array.end());
+        for(i=0;i<n;i++)
+        {
+            if(n==2)
+            {
+              return array[i]-1;
+            }
+           else  if(array[i+1]-array[i] != 1)
+            {
+                return array[i]+1;
+            }
+        }
+    }
+};
