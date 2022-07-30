@@ -1,0 +1,24 @@
+def push(arr, ele):
+    # Code here
+    arr.append(ele)
+# Function should pop an element from stack
+def pop(arr):
+    # Code here
+    if len(arr) > 0:
+        return arr.pop()
+    arr.pop()
+# function should return 1/0 or True/False
+def isFull(n, arr):
+    # Code here
+    if len(arr) == n:
+        return 1
+    
+# function should return 1/0 or True/False
+def isEmpty(arr):
+    #Code here
+    if(len(arr)==0):
+        return 1
+# function should return minimum element from the stack
+def getMin(n, arr):
+    # Code here
+    return min(arr)
