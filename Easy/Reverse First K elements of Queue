@@ -1,0 +1,8 @@
+def modifyQueue(q,k):
+    # code here
+    stack = []
+    for i in range(0,k):
+        stack.append(q.pop(0))
+    stack = stack[::-1]
+    stack += q
+    return stack
