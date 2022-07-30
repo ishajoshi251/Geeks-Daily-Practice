@@ -1,0 +1,8 @@
+class Solution:
+    def countZeroes(self, A, N):
+        count = 0
+        
+        for i in range(0,N):
+            count += A[i].count(0)
+            
+        return count
