@@ -1,0 +1,11 @@
+class Solution:
+    def removeConsonants(self, s):
+        #complete the function here
+        s1 = 'aeiouAEIOU'
+        res = ""
+        for i in s:
+            if i in s1:
+                res += i
+        if  len(res):
+            return res
+        return "No Vowel"
