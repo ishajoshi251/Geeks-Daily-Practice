@@ -1,0 +1,9 @@
+class Solution:
+
+	def findMaximum(self,arr, n):
+		# code here
+		max1 = 0
+		for i in arr:
+		    if i>max1:
+		        max1 = i
+		return max1
