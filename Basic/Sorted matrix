@@ -1,0 +1,14 @@
+class Solution:
+    def sortedMatrix(self,N,Mat):
+        #code here
+        a = []
+        for i in range(0,N):
+            for j in range(0,N):
+                a.append(Mat[i][j])
+        a.sort()
+        k =0
+        for i in range(0,N):
+            for j in range(0,N):
+                Mat[i][j] = a[k]
+                k+=1
+        return Mat
