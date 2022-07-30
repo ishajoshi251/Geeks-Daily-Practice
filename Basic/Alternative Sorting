@@ -1,0 +1,19 @@
+class Solution:
+    def alternateSort(self,arr, N):
+        # Your code goes here
+        arr.sort()
+        l1=[]
+        j=1
+        if(N%2==0):
+            for i in range(N//2):
+                l1.append(arr[-j])
+                l1.append(arr[i])
+                j=j+1
+            return(l1)
+        else:
+            for i in range(N//2+1):
+                l1.append(arr[-j])
+                l1.append(arr[i])
+                j=j+1
+            l1.pop()
+            return(l1)
