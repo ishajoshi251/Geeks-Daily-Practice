@@ -1,0 +1,9 @@
+class Solution:
+    def findTime(self, S1, S2):
+        # code here 
+        sum1 = S1.index(S2[0])
+        if len(S2) == 1:
+            return S1.index(S2[0])
+        for i in range(1,len(S2)):
+            sum1 += abs(S1.index(S2[i]) - S1.index(S2[i-1]))
+        return sum1
