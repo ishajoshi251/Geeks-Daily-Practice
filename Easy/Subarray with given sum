@@ -1,0 +1,17 @@
+class Solution:
+    def subArraySum(self,arr, n, s): 
+       #Write your code here
+       if s == 0:
+           return -1
+       start = 0
+       currsum = 0
+       i = 0
+       while i <n:
+           currsum += arr[i]
+           if currsum > s:
+               currsum -= arr[start]
+               start += 1
+           elif currsum == s:
+               return [start+1 , i+1]
+       return -1
+           
