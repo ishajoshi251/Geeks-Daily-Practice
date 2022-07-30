@@ -1,0 +1,13 @@
+def maxlength(s):
+    
+    #add code here
+    max1 =0 
+    sum1 = 0
+    for i in s:
+        if int(i) == 1:
+            sum1 += int(i)
+            if sum1>max1:
+                max1 = sum1
+        else:
+            sum1 = 0
+    return max1
