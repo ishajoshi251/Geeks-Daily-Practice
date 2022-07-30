@@ -1,0 +1,15 @@
+class Solution:
+    
+    #Function to find the maximum occurring character in a string.
+    def getMaxOccurringChar(self,s):
+        #code here
+        maxi = 1
+        
+        s = sorted(list(s))
+        ans = s[0]
+        for i in s:
+            if s.count(i)  > maxi:
+                maxi = s.count(i)
+                ans = i
+        return ans
+        
