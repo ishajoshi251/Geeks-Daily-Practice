@@ -1,0 +1,12 @@
+def uniqueRow(row, col, matrix):
+    #complete the function
+    l = []
+    li = []
+    k = 0
+    for i in range(row):
+        l.append(matrix[k:k +col])
+        k += col
+    for i in l:
+        if i not in li:
+            li.append(i)
+    return li
