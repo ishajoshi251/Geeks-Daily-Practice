@@ -1,0 +1,11 @@
+def isSubset( a1, a2, n, m):
+    
+    count = 0
+    
+    for i in range(0,m):
+        if a2[i] in a1:
+            count +=1
+    if count == m:
+       return str("Yes")
+    else :
+        return str("No")
