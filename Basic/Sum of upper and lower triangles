@@ -1,0 +1,19 @@
+class Solution:
+    
+    #Function to return sum of upper and lower triangles of a matrix.
+    def sumTriangles(self,matrix, n):
+        # code here 
+        sum1 = 0
+        sum2 =0
+        
+        for i in range(0,len(matrix)):
+            for j in range(0,len(matrix)):
+                if i<= j:
+                   sum1 += matrix[i][j]
+                
+        for i in range(0,len(matrix)):
+            for j in range(0,len(matrix)):
+                if i>= j:
+                   sum2 += matrix[i][j]
+                
+        return sum1,sum2
