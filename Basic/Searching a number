@@ -1,0 +1,10 @@
+class Solution:
+
+    
+    def search(self,arr, n, k): 
+        # code here
+        if k in arr:
+            ind = arr.index(k)
+            return ind +1
+        else:
+            return -1
