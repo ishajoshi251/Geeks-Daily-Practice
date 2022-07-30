@@ -1,0 +1,18 @@
+class Solution:
+    def getCount (self,S, N):
+        # your code here
+         count=0
+         dict1 = {}
+         s =""
+         for i in range(0,len(S)-1):
+             if S[i]!= S[i+1]:
+                s += S[i]
+         s += S[-1]
+         for i in range(0,len(s)):
+            if s[i] not in dict1:
+               dict1[s[i]] = 0
+            dict1[s[i]] += 1
+         for key,value in dict1.items():
+             if value == N:
+                 count +=1
+         return count
