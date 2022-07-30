@@ -1,0 +1,7 @@
+class Solution:
+    def maxOnes (self, Mat, N, M):
+        # code here 
+        for j in range(M):
+            for i in range(N):
+                if Mat[i][j] == 1:
+                    return i
