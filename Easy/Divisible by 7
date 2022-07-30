@@ -1,0 +1,8 @@
+class Solution:
+    def isdivisible7(self, num):
+        # code here
+        num = int(num)
+        if num%7 == 0:
+            return 1
+        else:
+            return 0
