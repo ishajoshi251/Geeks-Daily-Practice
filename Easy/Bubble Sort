@@ -1,0 +1,22 @@
+class Solution:
+    #Function to sort the array using bubble sort algorithm.
+    def bubbleSort(self,arr, n):
+        # code here
+        # for size iterations
+        '''
+        ehat if array is already sorted so to optimize the code we will 
+        just take swapped false and if swap is true to continue otherwise break'''
+        ''' ek baar swap hoga so we'll get last position fixed to get the whole
+        array sorted we need to run the above loop now n-1 me se i minus kiya qki evrytime one position is getting fixed
+        '''
+        for i in range(n-1):
+            swapped = False
+            for j in range(n-1-i): 
+                if arr[j+1] < arr[j]:
+                   temp = arr[j]
+                   arr[j] = arr[j+1]
+                   arr[j+1] = temp
+                   swapped = True
+            if not swapped:
+                break
+        return arr
