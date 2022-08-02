@@ -1,0 +1,19 @@
+class Solution:
+
+    def findPair(self, arr, L,N):
+        #code here
+        count = 0
+        arr.sort()
+        i = 0
+        j = 1
+        while i < L and j<L:
+            if arr[j] - arr[i] == N:
+                return True
+                break
+            elif arr[j] - arr[i] < N:
+                j += 1
+            else:
+                i += 1
+                if i == j:
+                    j += 1
+        return False
