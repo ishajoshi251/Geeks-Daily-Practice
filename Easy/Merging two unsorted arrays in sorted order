@@ -1,0 +1,10 @@
+class Solution:
+    def sortedMerge(self, a, b, c, n, m):
+        # Your code goes here
+        for i in range(n):
+            c[i] = a[i]
+        k = n
+        for i in range(m):
+            c[k] = b[i]
+            k += 1
+        return c.sort()
