@@ -1,0 +1,16 @@
+class Solution:
+	def countPairs(self, mat1, mat2, n, x):
+		# code here
+		count = 0
+		s = set()
+		for i in range(n):
+            for j in range(n):
+                s.add(mat2[i][j])
+        for i in range(n):
+            for j in range(n):
+                element = x - mat1[i][j]
+                if element in s:
+                    count += 1
+                else:
+                    continue
+        return count
