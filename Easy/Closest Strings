@@ -1,0 +1,20 @@
+class Solution:
+	def shortestDistance(self, s, word1, word2):
+		# code here
+		li = []
+		vi = []
+		diff = []
+	    if word1 == word2:
+	        return 0
+	    else:
+	        for i in range(len(s)):
+	            if word1 == s[i]:
+	                li.append(i)
+	            elif word2 == s[i]:
+	                vi.append(i)
+	        for i in range(len(li)):
+	            for j in range(len(vi)):
+	               diff.append(abs(li[i]-vi[j]))
+	                
+	                
+            return min(diff)
