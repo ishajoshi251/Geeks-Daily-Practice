@@ -1,0 +1,15 @@
+class Solution:
+    def toyCount(self, N, K, arr):
+        # code here
+        if sum(arr) < K:
+           return N
+        maxtoy = 0
+        moneysum = 0
+        arr.sort()
+        for i in range(N):
+            moneysum += arr[i]
+            if moneysum <= K:
+               maxtoy += 1
+            else:
+               break
+        return maxtoy
