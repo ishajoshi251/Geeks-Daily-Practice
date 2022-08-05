@@ -1,0 +1,31 @@
+class Solution:
+    # A1[] : the input array-1
+    # N : size of the array A1[]
+    # A2[] : the input array-2
+    # M : size of the array A2[]
+    
+    #Function to sort an array according to the other array.
+    def relativeSort (self,A1, N, A2, M):
+        # Your Code Here
+       d = {}
+       ans = []
+       for i in A1:
+           if i in d:
+               d[i] += 1
+           else:
+               d[i] = 1
+       for i in A2:
+           if i in d and d[i] > 0:
+               for j in range(d[i]):
+                   ans.append(i)
+               d[i] = 0
+       temp = []
+       for j in A1:
+           if d[j] > 0:
+               for k in range(d[j]):
+                   temp.append(j)
+               d[j] = 0
+       temp = sorted(temp)
+       for i in temp:
+           ans.append(i)
+       return ans
