@@ -1,0 +1,14 @@
+def findIndex(arr,X,Y,N):
+    # Your code goes here
+    count_X = 0
+    count_Y = 0
+    ind = -1
+    for i in range(N):
+        if arr[i] == X:
+            count_X += 1
+        if arr[i] == Y:
+            count_Y += 1
+        if count_X != 0 and count_Y != 0 and count_X == count_Y:
+           ind =  i
+        
+    return ind
