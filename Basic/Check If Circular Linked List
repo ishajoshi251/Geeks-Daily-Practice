@@ -1,0 +1,7 @@
+def isCircular(head):
+    # Code here
+    node = head
+    while node.next:
+        node = node.next
+        if node == head:
+            return 1
