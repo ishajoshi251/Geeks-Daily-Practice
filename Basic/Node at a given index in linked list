@@ -1,0 +1,9 @@
+def getNth(head, k):
+    # Code here
+    itr = head
+    count = 1
+    while itr:
+        if count == k:
+            return itr.data
+        count += 1
+        itr = itr.next
