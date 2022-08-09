@@ -1,0 +1,12 @@
+class Solution:
+    def maximumSumRectangle(self,R,C,M):
+        #code here
+        def kadane(ans):
+            m,s = -1,0
+            for i in range(len(ans)):
+                s+=ans[i]
+                if s>m:
+                    m = s
+                if s<0:
+                    s=0
+            return m
