@@ -1,0 +1,11 @@
+def isLengthEvenOrOdd(head):
+    # Code here
+    count = 0
+    itr = head
+    while itr.next:
+        count += 1
+        itr = itr.next
+    if count%2 == 0:
+        return 1
+    else:
+        return 0
