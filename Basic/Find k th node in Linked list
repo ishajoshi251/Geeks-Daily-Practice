@@ -1,0 +1,10 @@
+def fractionalNodes(head,k):
+        #add code here
+        n = 0
+        l = []
+        while head:
+            n += 1
+            l.append(head.data)
+            head = head.next
+        c = Node(l[ceil(n/k)-1])
+        return c
