@@ -1,0 +1,15 @@
+class Solution:
+    def deleteNode(self,head, x):
+        # Code here
+        temp = head
+        count =1
+        if count == x:
+            head= head.next
+            head.prev = None
+            return head
+        while temp != None:
+            if count == x:
+                temp.prev.next = temp.next
+            temp = temp.next
+            count += 1
+        return head
