@@ -1,0 +1,9 @@
+class Solution:
+    def search(self, patt, s):
+        # code here
+        ans = []
+        t = len(patt)
+        for i in range(len(s)-t+1):
+            if s[i:t+i] == patt:
+                ans.append(i+1)
+        return ans
