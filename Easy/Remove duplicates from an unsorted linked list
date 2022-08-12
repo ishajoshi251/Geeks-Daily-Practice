@@ -1,0 +1,18 @@
+class Solution:
+    #Function to remove duplicates from unsorted linked list.
+    def removeDuplicates(self, head):
+        # code here
+        # return head after editing list
+        s = set()
+        itr = head
+        while itr:
+            s.add(itr.data)
+            itr = itr.next
+        ll = LinkedList()
+        temp = head
+        while temp:
+            if temp.data in s:
+               s.remove(temp.data)
+               ll.append(temp.data)
+            temp = temp.next
+        return ll.head
