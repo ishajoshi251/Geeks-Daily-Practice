@@ -1,0 +1,19 @@
+def union(head1,head2):
+    # code here
+    # return head of resultant linkedlist
+    new = linkedList()
+    s = set()
+    itr = head1
+    ptr = head2
+    while itr:
+        s.add(itr.data)
+        itr = itr.next
+    while ptr:
+        if ptr.data not in s:
+            s.add(ptr.data)
+        ptr = ptr.next
+    li = list(s)
+    li.sort()
+    for i in li:
+        new.insert(i)
+    return new.head
