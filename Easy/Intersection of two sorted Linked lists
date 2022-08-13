@@ -1,0 +1,18 @@
+def findIntersection(head1,head2):
+    #return head
+    ll = linkedList()
+    l1 = []
+    itr=head1
+    ptr=head2
+    while itr and ptr:
+        if itr.data == ptr.data:
+            l1.append(itr.data)
+            itr = itr.next
+            ptr = ptr.next
+        elif itr.data<ptr.data:
+            itr = itr.next
+        else:
+            ptr = ptr.next
+    for i in l1:
+        ll.insert(i)
+    return ll.head
