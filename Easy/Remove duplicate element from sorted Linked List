@@ -1,0 +1,9 @@
+def removeDuplicates(head):
+    #code here
+    itr = head
+    while (itr.next != None):
+        if itr.data == itr.next.data:
+            itr.next = itr.next.next
+        else:
+            itr = itr.next
+    return head
