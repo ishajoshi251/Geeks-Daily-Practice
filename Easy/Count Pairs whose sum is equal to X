@@ -1,0 +1,24 @@
+class Solution:
+    def countPair(self,h1,h2,n1,n2,x):
+        '''
+        h1:  head of linkedList 1
+        h2:  head of linkedList 2
+        n1:  len of  linkedList 1
+        n2:   len of linkedList 1
+        X:   given sum
+        '''
+        d = {}
+        itr = h1
+        ptr = h2
+        count = 0
+        while itr:
+            if itr.data in d:
+                d[itr.data] += 1
+            d[itr.data] = 1
+            itr = itr.next
+        while ptr:
+            if x-ptr.data in d:
+                count += 1
+                d.get(x-ptr.data)
+            ptr = ptr.next
+        return count
