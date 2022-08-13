@@ -1,0 +1,23 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+'''
+def deleteMid(head):
+    '''
+    head:  head of given linkedList
+    return: head of resultant llist
+    '''
+    count = 0
+    itr = head
+    while itr:
+        count += 1
+        itr =itr.next
+    c = count//2
+    temp =head
+    countt = 0
+    while countt < c:
+        if countt == c-1:
+           temp.next = temp.next.next
+        temp = temp.next
+        countt += 1
