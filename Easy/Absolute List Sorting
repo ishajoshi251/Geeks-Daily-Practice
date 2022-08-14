@@ -1,0 +1,21 @@
+def sortList(head):
+    '''
+    head: head of linkedList
+    
+    Your method shouldn't print anything
+    it should transform the passed linked list
+    '''
+    l = []
+    itr = head
+    while itr:
+        l.append(itr.data)
+        itr = itr.next
+    l.sort()
+    itr = head
+    i = 0
+    while i<len(l):
+        itr.data = l[i]
+        itr = itr.next
+        i += 1
+    del l
+    return head
