@@ -1,0 +1,18 @@
+itr = l1
+    ptr = l2
+    a = ""
+    b = ""
+    while itr != None:
+        a += str(itr.data)
+        itr = itr.next
+    while ptr != None:
+        b += str(ptr.data)
+        ptr = ptr.next
+    a = int(a)
+    b = int(b)
+    if a > b:
+        a = a - b
+    else:
+        a = b - a
+    for i in str(a):
+        print(i,end=" ")
