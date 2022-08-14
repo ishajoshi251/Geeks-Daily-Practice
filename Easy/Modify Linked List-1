@@ -1,0 +1,18 @@
+class Solution:
+    #Function to reverse a linked list.
+    def modifyTheList(self, head):
+        # Code here
+        l = []
+        itr = head
+        while itr:
+            l.append(itr.data)
+            itr = itr.next
+        l = l[::-1]
+        itr=head
+        for i in range(len(l)//2):
+            itr.data = l[i] - itr.data
+            itr = itr.next
+        for i in range(len(l)//2,len(l)):
+            itr.data = l[i]
+            itr = itr.next
+        return head
