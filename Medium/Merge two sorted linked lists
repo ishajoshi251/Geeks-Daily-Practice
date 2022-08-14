@@ -1,0 +1,19 @@
+def sortedMerge(head1, head2):
+    # code here
+    li = []
+    l2 = []
+    itr = head1
+    ptr = head2
+    while itr:
+        li.append(itr.data)
+        itr = itr.next
+    while ptr:
+        l2.append(ptr.data)
+        ptr = ptr.next
+    res = []
+    res = li + l2
+    res.sort()
+    ll = LinkedList()
+    for i in res:
+        ll.append(i)
+    return ll.head
