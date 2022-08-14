@@ -1,0 +1,7 @@
+class Solution:
+    def mthHalf(self, N, M):
+        # code here
+        res = N
+        for i in range(M-1):
+            res = res//2
+        return res
