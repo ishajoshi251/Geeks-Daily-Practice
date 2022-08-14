@@ -1,0 +1,15 @@
+class Solution:
+    def reverseBetween(self, head, m, n):
+        #code here
+        l = []
+        itr = head
+        while itr:
+            l.append(itr.data)
+            itr = itr.next
+        l[m-1:n] = reversed(l[m-1:n])
+        itr = head
+        for i in l:
+            itr.data = i
+            itr = itr.next
+        del l
+        return head
