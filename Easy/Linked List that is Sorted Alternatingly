@@ -1,0 +1,16 @@
+def sort(h1):
+    #return head
+    itr = h1
+    l = []
+    while itr:
+        l.append(itr.data)
+        itr = itr.next
+    l.sort()
+    itr = h1
+    i = 0
+    while i<len(l):
+        itr.data = l[i]
+        itr = itr.next
+        i +=  1
+    del l
+    return h1
