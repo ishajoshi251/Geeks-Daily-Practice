@@ -1,0 +1,21 @@
+def mergeResult(h1,h2):
+    #return head of merged list
+    itr = h1
+    ptr = h2
+    l1 = []
+    l2 = []
+    res = []
+    ll = Llist()
+    tail = None
+    while itr:
+        l1.append(itr.data)
+        itr = itr.next
+    while ptr:
+        l2.append(ptr.data)
+        ptr = ptr.next
+    res = l1+l2
+    res.sort(reverse = True)
+    for i in range(len(res)):
+        tail = ll.insert(res[i],tail)
+       
+    return ll.head
