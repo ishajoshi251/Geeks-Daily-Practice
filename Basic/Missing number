@@ -1,0 +1,9 @@
+
+def missingNumber( A, N):
+     # Your code goes here
+    A.sort()
+    res = 1
+    for i in A:
+        if i == res:
+            res += 1
+    return res
