@@ -1,0 +1,26 @@
+def reorderList(self):
+    if (self.head==None or self.head.next==None):
+        return
+    # write code to reorder Nodes of Linked_List
+    temp=self.head   
+    head=self.head
+    slow,fast=self.head,self.head
+    while fast.next and fast.next.next:
+        slow=slow.next
+        fast=fast.next.next
+        
+    curr=slow.next
+    prev=None
+    while curr:     # reverse the right half part
+        x=curr.next
+        curr.next=prev
+        prev=curr
+        curr=x
+        
+    slow.next=None
+    head2=prev
+    while head2:
+        save=head.next
+        head.next=head2
+        head=head2
+        head2=save
