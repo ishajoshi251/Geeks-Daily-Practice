@@ -1,0 +1,16 @@
+class Solution:
+    def totalFine(self, n, date, car, fine):
+        #Code here
+        res = 0
+        if date%2 == 0:
+            for i in range(len(car)):
+                if car[i]%2 == 1:
+                    res += fine[i]
+        else:
+            for i in range(len(car)):
+                if car[i]%2 == 0:
+                    res += fine[i]
+        return res
+    
+    
+    
