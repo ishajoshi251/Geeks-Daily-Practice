@@ -1,0 +1,5 @@
+class Solution:
+    def countShare(self,B):
+        #code here
+        n = B//2 -1
+        return n*(n+1)//2
