@@ -1,0 +1,16 @@
+class Solution:
+    def findIntersection(self, head1, head2):
+        # code here
+        # return head of intersection list
+        s = set()
+        ptr = head1
+        itr = head2
+        new = linkedList()
+        while itr:
+            s.add(itr.data)
+            itr = itr.next
+        while ptr:
+            if ptr.data in s:
+                new.insert(ptr.data)
+            ptr = ptr.next
+        return new.head      
