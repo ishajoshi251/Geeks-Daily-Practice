@@ -1,0 +1,22 @@
+class Solution:
+    def zigzag(self, head_node):
+        # Complete this function
+        temp1 = head_node
+        temp2 = head_node.next
+        itr = 1
+        while temp2 != None:
+            if itr%2 != 0:
+                if temp2.data < temp1.data:
+                    swap = temp1.data
+                    temp1.data = temp2.data
+                    temp2.data = swap
+                      
+            else:
+                if temp2.data > temp1.data:
+                    swap = temp1.data
+                    temp1.data = temp2.data
+                    temp2.data = swap
+            temp1 = temp1.next
+            temp2 = temp2.next
+            itr += 1
+        return head_node
