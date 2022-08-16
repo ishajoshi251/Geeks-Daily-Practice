@@ -1,0 +1,16 @@
+class Solution:
+    def sortedInsert(self, head1,key):
+        # code here
+        # return head of edited linked list
+        itr = head1
+        new = Node(key)
+        while itr.next != None and itr.data<key:
+            itr = itr.next
+        new.next = itr.next
+        itr.next = new
+        if new.data <itr.data:
+            temp = itr.data
+            itr.data = new.data
+            new.data = temp
+
+        return head1
