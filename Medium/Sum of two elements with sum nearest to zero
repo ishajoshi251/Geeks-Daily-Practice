@@ -1,0 +1,22 @@
+
+class Solution:
+    def closestToZero (self,arr, n):
+        # your code here
+        arr.sort()
+        ans = 100000000
+        s = 0
+        i = 0
+        j = n-1
+        while i<j:
+            s = arr[i] + arr[j]
+            if abs(s) == abs(ans):
+                ans = max(s,ans)
+            if abs(s) < abs(ans):
+                ans = s
+            if s == 0:
+               return 0
+            if s<0:
+                i += 1
+            if s > 0:
+                j -= 1
+        return ans
