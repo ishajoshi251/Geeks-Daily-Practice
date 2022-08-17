@@ -1,0 +1,12 @@
+class Solution:
+    #Function to rearrange an array so that arr[i] becomes arr[arr[i]]
+    #with O(1) extra space.
+    def arrange(self,arr, n): 
+        #Your code here
+       res = []
+       for i in range(n):
+           res.append(arr[arr[i]])
+       for i in range(n):
+           arr[i] = res[i]
+       del res
+       return arr
