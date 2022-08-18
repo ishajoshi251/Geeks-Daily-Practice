@@ -1,0 +1,18 @@
+class Solution:
+    #Function to add two numbers represented by linked list.
+    def addTwoLists(self, first, second):
+        # code here
+        # return head of sum list
+        ll = LinkedList()
+        a = 0
+        b = 0
+        while first:
+            a = a*10 + first.data
+            first = first.next
+        while second:
+            b = b*10 + second.data
+            second = second.next
+        res = a+b
+        for i in str(res):
+            ll.insert(i)
+        return ll.head
