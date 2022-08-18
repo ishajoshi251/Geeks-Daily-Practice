@@ -1,0 +1,27 @@
+class Solution:
+    def sortedInsert(self, head, data):
+        #code here
+        #if data is less than head
+        if data <= head.data:
+            v = head.data
+            head.data = data
+            new = Node(v)
+            new.next = head.next
+            head.next = new
+            return head
+    
+        #if data lie btw head and last node
+        temp = head
+        while temp.next != head:
+            if data>=temp.data and data<=temp.next.data:
+                new = Node(data)
+                new.next = temp.next
+                temp.next = new
+                return head
+            temp = temp.next
+        
+        #if data is greatest
+        new = Node(data)
+        new.next = head
+        temp.next = new
+        return head
