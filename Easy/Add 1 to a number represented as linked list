@@ -1,0 +1,13 @@
+class Solution:
+    def addOne(self,head):
+        #Returns new head of linked List.
+        a = 0
+        itr = head
+        while itr:
+            a = a*10 + itr.data
+            itr = itr.next
+        a += 1
+        ll = LinkedList()
+        for i in str(a):
+            ll.insert(i)
+        return ll.head
