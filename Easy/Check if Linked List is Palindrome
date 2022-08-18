@@ -1,0 +1,16 @@
+class Solution:
+    def isPalindrome(self, head):
+        #code here
+        s = ""
+        itr = head
+        while itr:
+            s += str(itr.data)
+            itr = itr.next
+        start = 0
+        end = len(s)-1
+        while start <= end:
+            if s[start] != s[end]:
+                return False
+            start += 1
+            end -= 1
+        return True
