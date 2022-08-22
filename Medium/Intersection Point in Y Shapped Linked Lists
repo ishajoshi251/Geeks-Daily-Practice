@@ -1,0 +1,14 @@
+def intersetPoint(head1,head2):
+    #code here
+    fast = head1
+    slow = head2
+    while fast!=slow:
+        if fast == None:
+            fast = head2
+        else:
+            fast = fast.next
+        if slow == None:
+            slow = head1
+        else:
+            slow = slow.next
+    return fast.data
