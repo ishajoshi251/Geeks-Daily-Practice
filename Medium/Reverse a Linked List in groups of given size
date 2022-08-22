@@ -1,0 +1,18 @@
+class Solution:
+    def reverse(self,head, k):
+        # Code here
+        if head == None:
+            return None
+        prev = None
+        nextt = None
+        curr = head
+        count = 0 
+        while (curr != None and count<k):
+             nextt = curr.next
+             curr.next = prev
+             prev = curr
+             curr = nextt
+             count += 1
+        if nextt != None:
+            head.next = self.reverse(nextt,k)
+        return prev
