@@ -1,0 +1,13 @@
+ def rotate(self, head, k):
+        # code here
+        itr = head
+        while itr.next != None:
+            itr = itr.next
+        itr.next = head
+        count = 0
+        while count < k:
+            itr = itr.next
+            count += 1
+        head = itr.next
+        itr.next = None
+        return head
