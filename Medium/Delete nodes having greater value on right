@@ -1,0 +1,20 @@
+'''
+class Node:
+    def __init__(self,x):
+        self.data=x
+        self.next=None
+
+'''
+class Solution:
+    def compute(self,head):
+        #Your code here
+        curr = head
+        while curr.next != None:
+            if curr.data  < curr.next.data:
+                temp = curr
+                temp.data = temp.next.data
+                temp.next = temp.next.next
+                curr = head
+            else:
+                curr = curr.next
+        return head
