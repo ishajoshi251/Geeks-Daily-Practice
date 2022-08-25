@@ -1,0 +1,34 @@
+"""
+# Linked list Node class
+
+    class Node :
+        def __init__(self, val):
+            self.data = val
+            self.next = None
+
+"""
+
+class Solution:
+    def removeAllDuplicates(self, head):
+        #code here
+        #dummmy node bnayi
+        dummy = Node(-1)
+        #usko itr bnaya
+        itr = dummy
+        #usko head p point kiya
+        dummy.next = head
+        #curr me head ka next daala
+        curr = head.next
+        while curr != None:
+            flag = False #check krega duplicate h ya nhi if no the it will remain false else true
+            while curr != None and itr.next.data == curr.data:
+                flag = True
+                curr = curr.next
+            if flag == True:
+                itr.next = curr
+            else:
+                itr = itr.next
+            #last node k liye
+            if curr != None:
+                curr = curr.next
+        return dummy.next
