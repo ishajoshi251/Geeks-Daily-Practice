@@ -1,0 +1,31 @@
+'''
+
+class Node:
+    def __init__(self, d):
+        self.data=d
+        self.next=None
+        self.bottom=None
+        
+'''
+
+def flatten(root):
+    #Your code here
+    curr = root
+    l = []
+    while curr:
+        l.append(curr.data)
+        nextt = curr.next
+        while curr.bottom != None:
+            curr = curr.bottom
+            l.append(curr.data)
+        curr.bottom = nextt
+        curr = nextt
+    l.sort()
+    itr = head
+    i = 0
+    while i<len(l):
+        itr.data = l[i]
+        itr = itr.bottom
+        i += 1
+    return head
+        
