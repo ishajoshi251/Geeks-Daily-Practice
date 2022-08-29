@@ -1,0 +1,14 @@
+class Solution:
+    def ValidPair(self, a, n): 
+        # Your code goes here\
+        a.sort()
+        i = 0
+        j = n-1
+        count = 0
+        while i<j:
+            if (a[i] +a[j])>0:
+                count += j-i
+                j = j-1
+            else:
+                i += 1
+        return count
