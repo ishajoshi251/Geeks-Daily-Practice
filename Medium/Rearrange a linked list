@@ -1,0 +1,20 @@
+class Solution:    
+    def rearrangeEvenOdd(self, head):
+        #code here
+        if head == None or head.next == None or head.next.next == None:
+            return 
+        odd = head
+        even = head.next
+        temp = even
+        while odd.next != None and even.next != None:
+            if odd.next.next != None:
+                odd.next = odd.next.next
+            else:
+                odd.next = None
+            if even.next.next != None:
+                even.next = even.next.next
+            else:
+                even.next = None
+            odd =odd.next
+            even = even.next
+        odd.next = temp
