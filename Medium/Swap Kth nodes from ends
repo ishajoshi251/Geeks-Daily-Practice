@@ -1,0 +1,31 @@
+def swapkthnode(head,num,k):
+    # return head of new linked list
+    #code here k from end...... num-k+1
+    if k>num:
+        return head
+        #ssame can't swap
+    if k == num-k+1:
+        return head
+    start = head
+    start_prev = None
+    for i in range(1,k):
+        start_prev = start
+        start = start.next
+    end = head
+    end_prev = None
+    for i in range(1,num-k+1):
+        end_prev = end
+        end = end.next
+    if start_prev != None:
+        start_prev.next = end
+    if end_prev != None:
+        end_prev.next = start
+    temp = start.next
+    start.next = end.next
+    end.next = temp
+    if k == 1:
+        head = end
+    if k == num:
+        head = start
+    return head
+        
