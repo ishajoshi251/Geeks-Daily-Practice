@@ -1,0 +1,26 @@
+class Solution:
+    def partition(self, head, x):
+        #code here
+        if not head:
+            return None
+        left = Node(0)
+        equal = Node(0)
+        right = Node(0)
+        l = left
+        e = equal
+        r = right
+        while head:
+            if head.data<x:
+                l.next = head
+                l = l.next
+            elif head.data == x:
+                e.next = head
+                e = e.next
+            elif head.data >x:
+                r.next = head
+                r = r.next
+            head = head.next
+            l.next  = equal.next
+            e.next = right.next
+            r.next = None
+        return left.next
