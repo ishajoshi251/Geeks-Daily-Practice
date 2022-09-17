@@ -1,0 +1,8 @@
+class Solution:
+    def toh(self, disc, src, dst, aux):
+        # Your code here
+       if disc == 0: return 0
+       steps = self.toh(disc-1, src, aux, dst)
+       print("move disk", disc, "from rod", src, "to rod", dst)
+       steps += self.toh(disc-1,aux, dst, src)
+       return steps+1
