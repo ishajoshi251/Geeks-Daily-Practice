@@ -1,0 +1,13 @@
+class Solution:
+    def longestUniqueSubsttr(self, S):
+        # code here
+        res = 0
+        l = 0
+        set1 = set()
+        for r in range(len(S)):
+            while S[r] in set1:
+                set1.remove(S[l])
+                l += 1
+            set1.add(S[r])
+            res = max(res,r-l+1)
+        return res
