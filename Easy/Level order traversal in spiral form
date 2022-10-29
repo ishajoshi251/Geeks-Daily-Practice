@@ -1,0 +1,24 @@
+def findSpiral(root):
+    # Code here
+    if root is None:
+        return []
+    s1 = [root]
+    s2 = []
+    res = []
+    while s1 or s2:
+        while s1:
+            root = s1.pop()
+            res.append(root.data)
+            if root.right:
+                s2.append(root.right)
+            if root.left:
+                s2.append(root.left)
+        while s2:
+            root = s2.pop()
+            res.append(root.data)
+            if root.left:
+                s1.append(root.left)
+            if root.right:
+                s1.append(root.right)
+
+    return res
