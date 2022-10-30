@@ -1,0 +1,19 @@
+class Solution:
+    def nextHappy (self, N):
+        # code here
+        N = N+1
+        while True:
+            if self.ishappy(N):
+                return N
+            N += 1
+    def ishappy(self,N):
+        sum = 0
+        while N>0:
+            digit = N%10
+            sum += digit*digit
+            N = N//10
+        if sum == 1:
+            return True
+        if sum<10:
+            return False
+        return self.ishappy(sum)
