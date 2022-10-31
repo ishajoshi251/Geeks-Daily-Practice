@@ -1,0 +1,14 @@
+class Solution:
+    def series(self, n):
+        # Code here
+        res =[]
+        res.append(0)
+        res.append(1)
+        self.fib(res,0,n-2)
+        return res
+    def fib(self,res,ind,n):
+        if ind <= n:
+            res.append(res[ind+2-2] + res[ind+2-1])
+            self.fib(res,ind+1,n)
+        elif ind > n:
+            return
