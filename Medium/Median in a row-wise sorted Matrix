@@ -1,0 +1,8 @@
+class Solution:
+    def median(self, matrix, R, C):
+    	#code here 
+        l = []
+        for i in matrix:
+            l += i
+        l.sort()
+        return l[len(l)//2]
