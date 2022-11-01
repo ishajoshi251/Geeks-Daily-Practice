@@ -1,0 +1,16 @@
+class Solution:
+    def lastNon0Digit (self, N):
+        
+        # code here
+        
+        def fact(N):
+            if N == 0 or N == 1:
+               return 1
+            return fact(N-1)*N
+
+        result = fact(N)
+        while result:
+            if result%10 == 0:
+                result = result//10
+            else:
+                return result%10
