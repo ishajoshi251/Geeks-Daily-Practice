@@ -1,0 +1,16 @@
+class Solution:
+    def permutation (self, S):
+        # code here
+        lis=[]
+        if (len(S)==0):
+            return lis
+        if (len(S)==1):
+            lis.append(S)
+            return lis
+        tempstr=self.permutation(S[1:])
+        
+        for x in range(len(tempstr)):
+            lis.append(S[0]+tempstr[x])
+            lis.append(S[0]+" "+tempstr[x])
+        lis.sort()
+        return lis
