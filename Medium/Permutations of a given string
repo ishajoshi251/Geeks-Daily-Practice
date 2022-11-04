@@ -1,0 +1,42 @@
+#User function Template for python3
+
+class Solution:
+    def find_permutation(self, s):
+        # Code here
+        newstr = ""
+        sett = set()
+        ans = []
+        self.helper(s,newstr,ans,sett)
+        
+        for i in sett:
+            ans.append(i)
+        ans.sort()
+        return ans
+    def helper(self,s,newstr,ans,sett):
+        if len(s) == 0:
+            sett.add(newstr)
+            return
+        for i in range(len(s)):
+            curr = s[i]
+            f = s[0:i]
+            l = s[i+1:]
+            rest = f+l
+            self.helper(rest,newstr+curr,ans,sett)
+
+
+
+#{ 
+ # Driver Code Starts
+#Initial Template for Python 3
+
+
+if __name__ == '__main__':
+	t=int(input())
+	for i in range(t):
+		S=input()
+		ob = Solution()
+		ans = ob.find_permutation(S)
+		for i in ans:
+			print(i,end=" ")
+		print()
+# } Driver Code Ends
