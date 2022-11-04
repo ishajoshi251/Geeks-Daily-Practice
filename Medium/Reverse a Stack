@@ -1,0 +1,17 @@
+
+from typing import List
+
+class Solution:
+    def reverse(self,st): 
+        #code here
+        ans = []
+        st = self.solve(st,ans)
+        return st
+    def solve(self,st,ans):
+        if len(st) == 0:
+            return ans
+        element = st[-1]
+        ans.append(element)
+        st.pop()
+        self.solve(st,ans)
+        return ans
