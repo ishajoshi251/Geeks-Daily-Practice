@@ -1,0 +1,10 @@
+class Solution:
+    def minPartition(self, N):
+        # code here
+        l = [1, 2, 5, 10, 20, 50, 100, 200, 500, 2000]
+        ans = []
+        for i in range(len(l)-1,-1,-1):
+            while N >= l[i]:
+                N -= l[i]
+                ans.append(l[i])
+        return ans
