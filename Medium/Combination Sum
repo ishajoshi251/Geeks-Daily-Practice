@@ -1,0 +1,103 @@
+#{ 
+ # Driver Code Starts
+#Initial Template for Python 3
+
+import atexit
+import io
+import sys
+
+
+# } Driver Code Ends
+
+def remove_duplicate(arr):
+
+    new_arr=[]
+
+    for i in range (len(arr)):
+
+        if arr[i] in new_arr:
+
+            continue
+
+        else:
+
+            new_arr.append(arr[i])
+
+    return new_arr
+
+def helper(index,A,B,ds,ans):
+
+    if index==len(A):
+
+        if B==0:
+
+            ans.append(ds[:])
+
+        return 
+
+    if A[index]<=B:
+
+        ds.append(A[index])
+
+        helper(index,A,B-A[index],ds,ans)
+
+        ds.pop()
+
+    helper(index+1,A,B,ds,ans)
+
+    
+
+ 
+
+class Solution:
+
+    
+
+    #Function to return a list of indexes denoting the required 
+
+    #combinations whose sum is equal to given number.
+
+    def combinationalSum(self,A, B):
+
+        
+
+        y=remove_duplicate(A)
+
+        y.sort()
+
+        ans=[]
+
+        helper(0,y,B,[],ans)
+
+ 
+
+        return ans
+
+
+#{ 
+ # Driver Code Starts.
+
+
+if __name__ == '__main__':
+    test_cases = int(input())
+    for cases in range(test_cases):
+        n = int(input())
+        a = list(map(int,input().strip().split()))
+        s = int(input())
+        ob = Solution()
+        result = ob.combinationalSum(a,s)
+        if(not len(result)):
+            print("Empty")
+            continue
+        for i in range(len(result)):
+            print("(", end="")
+            size = len(result[i])
+            for j in range(size - 1):
+                print(result[i][j], end=" ")
+            if (size):
+                print(result[i][size - 1], end=")")
+            else:
+                print(")", end="")
+        print()
+
+# } Driver Code Ends
