@@ -1,0 +1,15 @@
+class Solution:
+    def twoOddNum(self, Arr, N):
+        # code here
+        ans = []
+        d = {}
+        for i in Arr:
+            if i in d:
+                d[i] += 1
+            else:
+                d[i] =  1
+        for key,values in d.items():
+            if values%2 == 1:
+                ans.append(key)
+        ans.sort()
+        return ans[::-1]
