@@ -1,0 +1,18 @@
+class Solution:
+    def helper(self,i,ans,sub,A):
+        if i >= len(A):
+            ans.append(sub.copy())
+            return 
+        self.helper(i+1,ans,sub,A)
+        sub.append(A[i])
+        self.helper(i+1,ans,sub,A)
+        sub.pop()
+        
+    def subsets(self, A):
+        #code here
+        ans = []
+        sub = []
+        self.helper(0,ans,sub,A)
+        ans.sort()
+        return ans
+    
