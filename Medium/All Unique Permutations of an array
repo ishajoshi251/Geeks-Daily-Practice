@@ -1,0 +1,9 @@
+from itertools import permutations as per
+
+class Solution:
+    def uniquePerms(self, arr, n):
+        ans_lis = []
+        set_ans = set(per(arr))
+        for i in set_ans:
+            ans_lis.append(i)
+        return sorted(ans_lis)
