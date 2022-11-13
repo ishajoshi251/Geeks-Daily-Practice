@@ -1,0 +1,13 @@
+class Solution:
+	def totalWays(self, n, capacity):
+		# code here
+		capacity.sort()
+		mod = 1000000007
+		cap = 1
+        if n == 1:
+            return capacity[0]
+        else:
+            for i in range(n):
+                cap *= capacity[i] - i
+                cap %= mod
+            return cap%mod
