@@ -1,0 +1,12 @@
+class Solution:
+
+
+	def countSubarray(self,arr, n, k):
+	    # code here
+	    count = 0
+        for i in range(n):
+            for j in range(i,n):
+                if arr[j] > k:
+                    count += n-j
+                    break
+        return count
