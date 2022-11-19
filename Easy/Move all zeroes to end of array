@@ -1,0 +1,14 @@
+class Solution:
+	def pushZerosToEnd(self,arr, n):
+    	# code here
+        count = arr.count(0)
+        ans = []
+        for i in arr:
+            if i != 0 :
+                ans.append(i)
+        for i in range(count):
+            ans.append(0)
+        for i in range(n):
+            arr[i] = ans[i]
+        del ans
+        return arr
