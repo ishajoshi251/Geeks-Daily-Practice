@@ -1,0 +1,13 @@
+from collections import defaultdict
+
+class Solution:
+    def allPairs(self, A, B, N, M, X):
+        # Your code goes here 
+        A.sort()
+        
+        l = []
+        for i in range(len(A)):
+            if(X-A[i] in B):
+               l.append([A[i],X-A[i]])
+        return l
+
