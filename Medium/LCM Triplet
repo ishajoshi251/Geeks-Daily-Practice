@@ -1,0 +1,11 @@
+class Solution:
+    def lcmTriplets(self,N):
+        #code here
+        if N < 3:
+            return N
+        elif N%2 :
+            return N *(N-1)*(N-2)
+        elif N%3 :
+            return N *(N-1)*(N-3)
+        else:
+            return (N-3)*(N-1)*(N-2)
