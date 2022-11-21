@@ -1,0 +1,20 @@
+class Solution:
+    def Anagrams(self, words, n):
+        '''
+        words: list of word
+        n:      no of words
+        return : list of group of anagram {list will be sorted in driver code (not word in grp)}
+        '''
+        
+        #code here
+        d = {}
+        for i in words:
+            s = str(sorted(list(i)))
+            if s not in d:
+               d[s] = [i]
+            else:
+                d[s].append(i)
+        ans = []
+        for i in sorted(d):
+            ans.append(d[i])
+        return ans
