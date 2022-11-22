@@ -1,0 +1,13 @@
+class Solution:
+
+	def maxIndexDiff(self,arr,n):
+		#code here
+        ind = 0
+        for i in range(n-1,0,-1):
+            j = 0
+            while i>j :
+                if arr[j] <= arr[i]:
+                    ind = max(ind,i-j)
+                    break
+                j +=1
+        return ind
