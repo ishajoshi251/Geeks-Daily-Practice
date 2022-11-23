@@ -1,0 +1,23 @@
+class Solution:
+    def rearrange(self,arr, n):
+        # code her
+        pos = []
+        neg = []
+        
+        for i in range(n):
+            if arr[i] >= 0:
+                pos.append(arr[i])
+            else:
+                neg.append(arr[i])
+        arr.clear()
+        i = 0
+        j = 0
+        while i < len(pos) or j < len(neg):
+            if i != len(pos):
+                arr.append(pos[i])
+                i += 1
+            if j != len(neg):
+                arr.append(neg[j])
+                j += 1
+            
+        return arr
