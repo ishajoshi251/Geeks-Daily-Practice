@@ -1,0 +1,13 @@
+def Rearrange( a, n):
+    # Your code goes here
+    ans = []
+    for i in range(n):
+        if a[i] < 0:
+            ans.append(a[i])
+    for i in range(n):
+        if a[i] >= 0:
+            ans.append(a[i])
+    for i in range(n):
+        a[i] = ans[i]
+    return a
+            
