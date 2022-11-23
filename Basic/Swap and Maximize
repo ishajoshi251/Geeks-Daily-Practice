@@ -1,0 +1,11 @@
+def maxSum(arr,n):
+    # code here
+    arr.sort()
+    summ = 0
+    start = 0
+    end = n-1
+    while start < end:
+        summ += abs(arr[start] - arr[end])
+        start += 1
+        end -=1
+    return summ*2
