@@ -1,0 +1,20 @@
+class Solution:
+
+    def isPossible(self, S):
+
+        # code here
+        d = {}
+        for i in S:
+            if i in d:
+                d[i] += 1
+            else:
+                d[i] = 1
+        odd = 0
+        for key,values in d.items():
+            if values %2 != 0 :
+                odd += 1
+                
+                if odd > 1:
+                   return False
+                   break
+        return True
