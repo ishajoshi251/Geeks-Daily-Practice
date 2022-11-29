@@ -1,0 +1,13 @@
+class Solution:
+    def merge(self, S1, S2):
+        # code here
+        mini = min(len(S1),len(S2))
+        ans = ""
+        for i in range(mini):
+            ans += S1[i]
+            ans += S2[i]
+        if S1:
+            ans += S1[mini:]
+        if S2:
+            ans += S2[mini:]
+        return ans
