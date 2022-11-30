@@ -1,0 +1,11 @@
+class Solution:
+    def RedOrGreen(self,N,S):
+        #code here
+        cr = 0 
+        cg = 0
+        for i in S:
+            if i == 'R':
+                cr += 1
+            else:
+                cg += 1
+        return min(cg,cr)
