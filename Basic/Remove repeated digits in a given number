@@ -1,0 +1,11 @@
+class Solution:
+    def modify(self, N):
+        #code here
+        n = str(N)
+        s = ""
+        for i in range(1,len(n)):
+            if n[i-1] == n[i]:
+                continue
+            else:
+                s += n[i]
+        return n[0] + s
