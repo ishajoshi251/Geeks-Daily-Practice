@@ -1,0 +1,6 @@
+class Solution:
+    def sort(self, s): 
+        #code here
+        s = list(s)
+        s.sort()
+        return "".join(s)
