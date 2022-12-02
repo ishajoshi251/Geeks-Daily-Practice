@@ -1,0 +1,7 @@
+def minValue(root):
+    ##Your code here
+    if root == None:
+        return -1
+    while root.left :
+        root = root.left
+    return root.data
