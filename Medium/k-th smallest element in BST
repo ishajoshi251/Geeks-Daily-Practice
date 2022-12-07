@@ -1,0 +1,24 @@
+'''
+class Node:
+    def __init__(self, val):
+        self.right = None
+        self.data = val
+        self.left = None
+'''
+
+class Solution:
+    # Return the Kth smallest element in the given BST 
+    def KthSmallestElement(self, root, K): 
+        #code here.
+        self.count = 1
+        self.smallest = -1
+        def inorder(root):
+            if not root:
+                return
+            inorder(root.left)
+            if self.count == K:
+                self.smallest = root.data
+            self.count += 1
+            inorder(root.right)
+        inorder(root)
+        return self.smallest
