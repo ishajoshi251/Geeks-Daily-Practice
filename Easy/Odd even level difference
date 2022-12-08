@@ -1,0 +1,23 @@
+'''
+class Node:
+    def __init__(self, val):
+        self.right = None
+        self.data = val
+        self.left = None
+'''
+class Solution:
+    def getLevelDiff(self, root):
+        # Code here
+        a,b = 0,0 
+        def lev(root,l):
+            nonlocal a,b
+            if not root:
+                return
+            if l%2 != 0:
+                a += root.data
+            else:
+                b += root.data
+            lev(root.left,l+1)
+            lev(root.right,l+1)
+            return a-b
+        return lev(root,1)
