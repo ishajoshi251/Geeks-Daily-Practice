@@ -1,0 +1,37 @@
+class Solution:
+    def printTriangle(self, n):
+        # Code here
+        for rows in range(1,(2*N+1)):
+
+            if rows<=N:
+
+                formula=rows
+
+                spaces=N-rows
+
+                for col in range(spaces):
+
+                   print(" ",end="")
+
+                for col in range(formula):
+
+                   print("*",end=" ")
+
+                print() 
+               
+
+            else:
+
+                formula=(2*N+1)-rows
+
+                spaces=N-formula
+
+                for col in range(spaces):
+
+                   print(" ",end="")
+
+                for col in range(formula):
+
+                   print("*",end=" ")
+
+                print()
