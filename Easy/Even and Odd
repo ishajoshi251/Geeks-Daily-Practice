@@ -1,0 +1,19 @@
+class Solution:
+    def reArrange(self, arr, N):
+        # code here 
+        even = []
+        odd = []
+        for i in range(len(arr)):
+            if arr[i] % 2 == 0:
+               even.append(arr[i])
+            else:
+                odd.append(arr[i])
+        ans = []
+        i = 0
+        while i<N//2:
+            ans.append(even[i])
+            ans.append(odd[i])
+            i += 1
+        for i in range(N):
+            arr[i] = ans[i]
+        return arr
