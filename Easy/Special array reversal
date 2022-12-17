@@ -1,0 +1,18 @@
+class Solution:
+    def reverse(self, s):
+        # code here
+        arr = list(s)
+        resultantString = ""
+        
+        for i in s:
+            if i.isalpha():
+                resultantString += i
+        
+        reverseArr = resultantString[::-1]
+        count = 0
+        for i in range(len(arr)):
+            if arr[i].isalpha():
+                arr[i] = reverseArr[count]
+                count += 1
+        res = "".join(arr)
+        return(res)
