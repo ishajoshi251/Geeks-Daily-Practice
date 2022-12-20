@@ -1,0 +1,14 @@
+class Solution:
+    def countSquares(self, N):
+        # code here 
+        sqr=int(math.sqrt(N))
+
+        if(N==0 or N==1 or N<0):
+
+            return(0)
+
+        elif(sqr*sqr==N):
+
+            return(sqr-1)
+
+        return(sqr)
