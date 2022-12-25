@@ -1,0 +1,7 @@
+def search (arr, n, x, k) : 
+    #Complete the function
+    if x not in arr:
+        return -1
+    for i in range(n):
+        if arr[i] == x:
+            return i
