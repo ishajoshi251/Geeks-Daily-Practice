@@ -1,0 +1,7 @@
+class Solution:
+	def evaluate_exp(self, n):
+		# Code he
+		if n%2 == 0:
+		    return 1
+		else:
+		    return -1
