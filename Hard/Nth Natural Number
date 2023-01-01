@@ -1,0 +1,8 @@
+class Solution:
+    def findNth(self,N):
+        #code here
+        s = ""
+        while N!=0:
+            s += str(N%9)
+            N = N//9
+        return s[::-1]
