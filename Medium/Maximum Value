@@ -1,0 +1,24 @@
+'''
+class Node:
+    def __init__(self, val):
+        self.right = None
+        self.data = val
+        self.left = None
+'''
+
+class Solution:
+    def maximumValue(self,node):
+        # code here
+        ans = []
+        self.traversal(node,0,ans)
+        return ans
+    def traversal(self,node,level,ans):
+        if not node:
+            return
+        if level<len(ans):
+            if node.data>ans[level]:
+                ans[level] = node.data
+        else:
+            ans.append(node.data)
+        self.traversal(node.left,level+1,ans)
+        self.traversal(node.right,level+1,ans)
