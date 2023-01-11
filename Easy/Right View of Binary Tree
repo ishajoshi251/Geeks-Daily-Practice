@@ -1,0 +1,27 @@
+'''
+# Node Class:
+class Node:
+    def init(self,val):
+        self.data = val
+        self.left = None
+        self.right = None
+'''
+class Solution:
+    #Function to return list containing elements of right view of binary tree.
+    
+        
+        # code here
+    def solve(self,root,res,level):
+        if not root:
+            return 
+        if len(res) == level:
+            res.append(root.data)
+        self.solve(root.right,res,level+1)
+        self.solve(root.left,res,level+1)
+    
+    def rightView(self,root):
+    
+    # code here
+        res = []
+        self.solve(root,res,0)
+        return res
