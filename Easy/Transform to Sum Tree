@@ -1,0 +1,22 @@
+
+'''
+# Node Class:
+class Node:
+    def __init__(self,val):
+        self.data = val
+        self.left = None
+        self.right = None
+'''
+class Solution:
+    def toSumTree(self, root) :
+        #code here
+        def solve(root):
+            if not root:
+                return 0
+            a = solve(root.left)
+            b = solve(root.right)
+            x = root.data
+            root.data = a+b
+            return a+b+x
+        solve(root)
+        
