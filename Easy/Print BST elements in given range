@@ -1,0 +1,17 @@
+
+class Solution:
+    def printNearNodes(self, root, low, high):
+        #code here.
+        def inorder(root):
+            if not root:
+                return
+            inorder(root.left)
+            arr.append(root.data)
+            inorder(root.right)
+        arr =[]
+        ans=[]
+        inorder(root)
+        for i in range(0,len(arr)):
+            if arr[i]>=low and arr[i]<=high:
+                ans.append(arr[i])
+        return ans
