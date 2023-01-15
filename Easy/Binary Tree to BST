@@ -1,0 +1,34 @@
+
+'''
+# Tree Node
+class Node:
+    def __init__(self, val):
+        self.right = None
+        self.data = val
+        self.left = None
+'''
+class Solution:
+    # The given root is the root of the Binary Tree
+    # Return the root of the generated BST
+    def binaryTreeToBST(self, root):
+        # code here
+        def inorder(root):
+            if not root:
+                return 
+            inorder(root.left)
+            arr.append(root.data)
+            inorder(root.right)
+        def bst(root,arr,i):
+            if not root:
+                return
+            bst(root.left,arr,i)
+            root.data = arr[i[0]]
+            i[0] += 1
+            bst(root.right,arr,i)
+            
+        arr=[]
+        inorder(root)
+        arr.sort()
+        i = [0]
+        bst(root,arr,i)
+        return root
