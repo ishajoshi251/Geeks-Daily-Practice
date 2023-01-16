@@ -1,0 +1,12 @@
+class Solution:
+    def nextLargerElement(self,arr,n):
+        #code here
+        a = []
+        res = [-1]*n
+        for i in range(n-1,-1,-1):
+            while a and a[-1]<=arr[i]:
+                a.pop()
+            if a:
+                res[i] = a[-1]
+            a.append(arr[i])
+        return res
