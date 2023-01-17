@@ -1,0 +1,18 @@
+class Solution:
+    # return true/false denoting whether the tree is Symmetric or not
+    def isSymmetric(self, root):
+        # Your Code Here
+        def solve(l,r):
+            if l is None and r is None:
+                return True
+            if (l is None and r is not None) or ( l is not None and r is None):
+                return False
+            a = solve(l.left,r.right)
+            b = solve(l.right,r.left)
+            if a and b and l.data == r.data:
+                return True
+            else:
+                return False
+        if not root:
+            return True
+        return solve(root.left,root.right)
