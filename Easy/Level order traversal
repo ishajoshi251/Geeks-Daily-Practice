@@ -1,0 +1,15 @@
+class Solution:
+    #Function to return the level order traversal of a tree.
+    def levelOrder(self,root ):
+        # Code here
+        q = deque()
+        q.append(root)
+        res = []
+        while q:
+            temp = q.popleft()
+            res.append(temp.data)
+            if temp.left:
+                q.append(temp.left)
+            if temp.right:
+                q.append(temp.right)
+        return res
