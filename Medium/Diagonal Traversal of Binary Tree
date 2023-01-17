@@ -1,0 +1,16 @@
+class Solution:
+    def diagonal(self,root):
+        #:param root: root of the given tree.
+        #return: print out the diagonal traversal,  no need to print new line
+        #code here
+        q = deque()
+        ans =[]
+        q.append(root)
+        while q:
+            temp = q.popleft()
+            while temp:
+                if temp.left:
+                    q.append(temp.left)
+                ans.append(temp.data)
+                temp = temp.right
+        return ans
