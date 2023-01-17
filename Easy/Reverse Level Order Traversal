@@ -1,0 +1,14 @@
+def reverseLevelOrder(root):
+    # code here
+    q = deque()
+    res =[]
+    q.append(root)
+    while q:
+        temp = q.popleft()
+        res.append(temp.data)
+        if temp.right:
+            q.append(temp.right)
+        if temp.left:
+            q.append(temp.left)
+    res = res[::-1]
+    return res
