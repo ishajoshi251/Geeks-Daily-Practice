@@ -1,0 +1,33 @@
+
+'''
+class Node:
+    """ Class Node """
+    def __init__(self, value):
+        self.left = None
+        self.data = value
+        self.right = None
+'''
+
+#Function to convert a binary tree to doubly linked list.
+class Solution:
+    def solve(self,root,head,tail):
+            if not root:
+                return
+            self.solve(root.left,head,tail)
+            if head == None:
+                head = root
+                tail = root
+            else:
+                tail.right = root
+                root.left = tail
+                tail = tail.right
+            self.solve(root.right,head,tail)
+            
+    def bToDLL(self,root):
+        # do Code here
+        head = None
+        tail = None
+        
+        
+        self.solve(root,head,tail)
+        return head
