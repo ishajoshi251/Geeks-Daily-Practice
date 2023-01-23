@@ -1,0 +1,34 @@
+class Solution:
+    def inorder(self,root,l):
+
+        if root!=None:
+
+            self.inorder(root.left,l)
+
+            l.append(root.data)
+
+            self.inorder(root.right,l)
+
+        return l
+
+
+
+ 
+
+ 
+
+    def merge(self, root1, root2):
+
+        l=[]
+
+        x =[]
+
+        
+
+        self.inorder(root1, l)
+
+        self.inorder(root2,x)
+
+        
+
+        return sorted(l+x)
