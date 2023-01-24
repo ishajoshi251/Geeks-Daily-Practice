@@ -1,0 +1,13 @@
+class Solution:
+
+	def convert(self,arr, n):
+		# code here
+        new = sorted(arr[:])
+        value = 0
+        d = {}
+        for i in range(n):
+            d[new[i]] = value
+            value += 1
+        for i in range(n):
+            arr[i] = d[arr[i]]
+        return arr
