@@ -1,0 +1,28 @@
+'''
+# Node Class:
+class Node:
+    def _init_(self,val):
+        self.data = val
+        self.left = None
+        self.right = None
+'''
+class Solution:
+    #Function to get the maximum width of a binary tree.
+    def getMaxWidth(self,root):
+       
+        #code here
+        if not root:
+            return None
+        res = 0
+        q = deque()
+        q.append(root)
+        while q:
+            cnt = len(q)
+            res = max(res,cnt)
+            for i in range(cnt):
+                temp = q.popleft()
+                if temp.left:
+                    q.append(temp.left)
+                if temp.right:
+                    q.append(temp.right)
+        return res
