@@ -1,0 +1,25 @@
+class Solution:
+    def allPalindromicPerms(self, S):
+        # code here 
+        def helper(ind,s,sub,res):
+            if ind == len(s):
+                res.append([i for i in sub])
+                return
+            for i in range(ind,len(s)):
+                if ispal(s,ind,i):
+                    sub.append(s[ind:i+1])
+                    helper(i+1,s,sub,res)
+                    sub.pop()
+        def ispal(s,start,end):
+            while start <= end:
+                if s[start] != s[end]:
+                    return False
+                start += 1
+                end -= 1
+            return True
+            
+        res=[]
+        sub=[]
+        helper(0,S,sub,res)
+        return res
+        
