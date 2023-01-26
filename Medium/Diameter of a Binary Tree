@@ -1,0 +1,20 @@
+
+class Solution:
+    
+    #Function to return the diameter of a Binary Tree.
+    def diameter(self,root):
+        # Code here
+        res = 0
+        def solve(root):
+            nonlocal res
+            if root is None:
+                return 0
+            l = solve(root.left)
+            r = solve(root.right)
+        
+            temp = 1 + max(l,r)
+            ans = max(temp , 1+l+r)
+            res = max(res , ans)
+            return temp
+        solve(root)
+        return res
