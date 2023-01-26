@@ -1,0 +1,14 @@
+class Solution:
+	def sortedArrayToBST(self, nums):
+	    # code here
+        def helper(ans,st,en):
+            if st>en:
+                return
+            mid = (st+en)//2
+            ans.append(nums[mid])
+            helper(ans,st,mid-1)
+            helper(ans,mid+1,en)
+            
+        ans = []
+        helper(ans,0,len(nums)-1)
+        return ans
