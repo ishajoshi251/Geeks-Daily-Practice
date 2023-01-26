@@ -1,0 +1,31 @@
+'''
+class Node:
+    def __init__(self,val):
+        self.data = val
+        self.left = None
+        self.right = None
+'''
+
+#Function to serialize a tree and return a list containing nodes of tree.
+def serialize(root, A):
+    #code here
+    if not root:
+        return 
+   
+    serialize(root.left,A)
+    A.append(root.data)
+    serialize(root.right,A)
+    
+
+#Function to deserialize a list and construct the tree.   
+def deSerialize(A):
+    #code here
+    def solver(A,st,en):
+        if st>en:
+            return None
+        mid = (st+en)//2
+        root = Node(A[mid])
+        root.left = solver(A,st,mid-1)
+        root.right = solver(A,mid+1,en)
+        return root
+    return solver(A,0,len(A)-1)
