@@ -1,0 +1,25 @@
+class Solution:
+
+    #Function to perform case-specific sorting of strings.
+    def caseSort(self,s,n):
+        #code here
+        small = []
+        capital = []
+        ans=[]
+        for i in s:
+            if i.islower():
+                small.append(i)
+            else:
+                capital.append(i)
+        small.sort()
+        capital.sort()
+        x = 0
+        y = 0
+        for i in range(n):
+            if s[i].islower():
+                ans.append(small[x])
+                x += 1
+            else:
+                ans.append(capital[y])
+                y += 1
+        return "".join(ans)
