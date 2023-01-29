@@ -1,0 +1,12 @@
+class Solution:
+	
+	def findMaxSum(self,arr, n):
+		# code here
+        dp = [0]*(n+1)
+        dp[0] = 0
+        dp[1] = arr[0]
+        for i in range(2,n+1):
+            l = arr[i-1] + dp[i-2]
+            r = dp[i-1]
+            dp[i] = max(l,r)
+        return dp[n]
