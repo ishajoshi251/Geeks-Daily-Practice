@@ -1,0 +1,14 @@
+class Solution:
+	def setBits(self, N):
+		# code here
+        if N == 0:
+            return 0
+        
+        count = 0
+        while N>0:
+            a = N%10
+            if a&1 == 1:
+                count += 1
+                
+            N = N>>1
+        return count
