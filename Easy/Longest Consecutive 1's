@@ -1,0 +1,21 @@
+class Solution:
+    ##Complete this function
+    # Function to calculate the longest consecutive ones
+    def maxConsecutiveOnes(self, N):
+        ##Your code here
+        if N == 0:
+            return 0
+        maxi = 0
+        count = 0
+        while N>0:
+            a = N%10
+            if a&1 == 1:
+                count += 1
+                maxi = max(maxi,count)
+            else:
+                count = 0
+            N = N>>1
+        return maxi
+            
+            
+
