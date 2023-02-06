@@ -1,0 +1,13 @@
+def maxArea(A,le):
+    #code here
+    left = 0
+    right = le-1
+    ans = 0
+    while left<right:
+          temp = min(A[right],A[left])*(right-left)
+          ans = max(ans,temp)
+          if A[right]>A[left]:
+              left += 1
+          else:
+              right -= 1
+    return ans
