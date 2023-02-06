@@ -1,0 +1,18 @@
+# Function should return True/False or 1/0
+def PalinArray(arr ,n):
+    # Code here
+    for i in arr:
+        num = i
+        if i == reverse(num):
+            continue
+        else:
+            return False
+    return True
+def reverse(n):
+    ans = 0
+    while(n!=0):
+        digit = n%10
+        ans = (ans*10)+digit
+        n = n//10
+    return ans
+    
