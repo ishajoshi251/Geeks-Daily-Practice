@@ -1,0 +1,33 @@
+class Solution:
+    def findPosition(self, N):
+        # code here 
+        if(N==0):
+            return -1
+
+        noOfBits=0
+
+        pos=1
+
+        ans=0
+
+        while(N):
+
+            if(N&1):
+
+                noOfBits+=1
+
+                ans=pos
+
+            
+
+            pos+=1
+
+            N>>=1
+
+        
+
+        if(noOfBits>1):
+            return -1
+
+        else :
+            return ans
