@@ -1,0 +1,7 @@
+
+class Solution:
+    def sumOfDependencies(self,adj,V):
+        #code here
+        count = 0
+        for i in adj:
+            count += len
