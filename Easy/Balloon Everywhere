@@ -1,0 +1,23 @@
+from collections import Counter
+class Solution:
+    def maxInstance(self, s : str) -> int:
+        # code here
+        mp=Counter(s)
+
+        mp["l"]=mp["l"]//2
+
+        mp["o"]=mp["o"]//2
+
+        res=float("inf")
+
+        for ch in "balon":
+
+            if ch in mp:
+
+                res=min(res,mp[ch])
+
+            else:
+
+                return 0
+
+        return res
