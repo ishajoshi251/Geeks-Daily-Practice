@@ -1,0 +1,12 @@
+class Solution:
+    def longestPalin(self, S):
+        # code here
+        s = S[0]
+        maxx = 1
+        for i in range(len(S)):
+            for j in range(i+maxx+1,len(S)+1):
+                a =  S[i:j]
+                if a == a[::-1]:
+                    s = a
+                    maxx = len(s)
+        return s
