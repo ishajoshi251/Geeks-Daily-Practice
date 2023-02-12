@@ -1,0 +1,59 @@
+from typing import Optional
+
+"""
+
+Definition for singly Link List Node
+class Node:
+    def __init__(self,x):
+        self.data=x
+        self.next=None
+
+You can also use the following for printing the link list.
+printList(node)
+"""
+from math import sqrt
+
+class Solution:
+    def primeList(self, head : Optional['Node']) -> Optional['Node']:
+        # code here
+        curr = head
+        while curr:
+            if not self.isPrime(curr.data):
+                new = self.nearestPrime(curr.data)
+                curr.data = new
+            curr = curr.next
+        return head
+    def isPrime(self,n):
+        if n== 1:
+            return False
+            
+        flag  = 0
+        if(n > 1):
+            for i in range(2, int(sqrt(n)) + 1):
+                if (n % i == 0):
+                    flag = 1
+                    break
+            if (flag == 0):
+                return True
+            else:
+                return False
+        else:
+            return False
+    def nearestPrime(self,n):
+        prime1=prime2=0
+        if n==1:
+            return 2
+        for i in range(n,-1,-1):
+            if self.isPrime(i):
+                prime1 = i
+                break
+        for i in range(n,n*n):
+            if self.isPrime(i):
+                prime2 = i
+                break
+            
+        if abs(n-prime1)> abs(n-prime2):
+            return prime2
+        else:
+            return prime1
+    
