@@ -1,0 +1,11 @@
+#User function Template for python3
+class Solution:
+	def maxSumIS(self, Arr, n):
+		# code here
+        dp = []
+        for i in range(n):
+            dp.append(Arr[i])
+            for j in range(i):
+                if Arr[i]>Arr[j] and dp[i]<dp[j]+Arr[i]:
+                    dp[i] = dp[j]+Arr[i]
+        return max(dp)
