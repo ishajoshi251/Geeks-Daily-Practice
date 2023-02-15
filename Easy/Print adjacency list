@@ -1,0 +1,15 @@
+
+class Solution:
+    
+    #Function to return the adjacency list for each vertex.
+    def printGraph(self, V, adj):
+        # code here
+        ans = []
+        for i in range(V):
+            temp = []
+            temp.append(i)
+            for j in range(len(adj[i])):
+                temp.append(adj[i][j])
+    
+            ans.append(temp)
+        return ans
