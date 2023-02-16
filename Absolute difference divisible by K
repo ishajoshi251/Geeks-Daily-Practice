@@ -1,0 +1,13 @@
+lass Solution:
+    def countPairs (self, n, arr, k):
+        # code here
+        d = {}
+        count = 0
+        for i in arr:
+            num = i%k
+            if num in d:
+                d[num] += 1
+                count += d[num]
+            else:
+                d[num] = 0
+        return count
