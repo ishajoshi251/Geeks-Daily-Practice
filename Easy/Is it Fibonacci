@@ -1,0 +1,8 @@
+class Solution():
+    def solve(self, N, K, GeekNum):
+        #your code goes here
+        sum_of_k_terms = sum(GeekNum)
+        for i in range(N-K) :
+            GeekNum.append(sum_of_k_terms) 
+            sum_of_k_terms += GeekNum[-1] - GeekNum[i] 
+        return GeekNum[-1]
