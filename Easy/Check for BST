@@ -1,0 +1,18 @@
+class Solution:
+    
+    #Function to check whether a Binary Tree is BST or not.
+    def isBST(self, root):
+        #code here
+        v = []
+        self.inorder(root,v)
+        for i in range(len(v)-1):
+            if v[i]>v[i+1]:
+                return False
+        return True
+                
+    def inorder(self,root,v):
+        if not root:
+            return
+        self.inorder(root.left,v)
+        v.append(root.data)
+        self.inorder(root.right,v)
