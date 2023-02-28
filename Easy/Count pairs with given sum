@@ -1,0 +1,13 @@
+class Solution:
+    def getPairsCount(self, nums, n, k):
+        # code here
+        d = {}
+        ans = 0
+        for i in range(len(nums)):
+            if k - nums[i] in d:
+                ans += d[k-nums[i]]
+            if nums[i] in d:
+                d[nums[i]] += 1
+            else:
+                d[nums[i]] = 1
+        return ans
