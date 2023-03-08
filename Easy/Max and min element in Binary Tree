@@ -1,0 +1,19 @@
+class Solution:
+    def inorder(self,root,v):
+        if not root:
+            return
+        self.inorder(root.left,v)
+        v.append(root.data)
+        self.inorder(root.right,v)
+    def findMax(self,root):
+        #code here
+        v = []
+        self.inorder(root,v)
+        v.sort()
+        return v[-1]
+    def findMin(self,root):
+        #code here
+        v = []
+        self.inorder(root,v)
+        v.sort()
+        return v[0]
