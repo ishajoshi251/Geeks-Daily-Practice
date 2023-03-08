@@ -1,0 +1,25 @@
+'''
+class Node:
+    def __init__(self,val):
+        self.data = val
+        self.left = None
+        self.right = None
+'''
+class Solution:
+    def hasPathSum(self,root, S):
+        '''
+        :param root: root of given tree.
+        :param sm: root to leaf sum
+        :return: true or false
+        '''
+        # code here
+        sum = 0
+        return self.solve(root,sum,S)
+        
+    def solve(self,root,sum,S):
+        if not root:
+            return False
+        sum += root.data
+        if sum == S and root.left == None and root.right == None:
+            return True
+        return self.solve(root.left,sum,S) or self.solve(root.right,sum,S)
