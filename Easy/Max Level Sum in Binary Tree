@@ -1,0 +1,37 @@
+'''
+class Node:
+    def __init__(self, value):
+        self.left = None
+        self.data = value
+        self.right = None
+'''
+class Solution:
+    def maxLevelSum(self, root):
+        # Code here
+        maxans=float('-inf')
+
+        q=[root]
+
+        while q:
+
+            levelsum=0
+
+            for i in range(len(q)):
+
+               
+
+                temp=q.pop(0)
+
+                levelsum+=temp.data
+
+                if temp.left:
+
+                    q.append(temp.left)
+
+                if temp.right:
+
+                    q.append(temp.right)
+
+            maxans=max(maxans,levelsum)        
+
+        return maxans    
