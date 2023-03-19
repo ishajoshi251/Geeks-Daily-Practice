@@ -1,0 +1,34 @@
+class Solution:
+    def diagonalSort(self, matrix, n, m):
+        # code here 
+        des = {}
+        acs = {}
+        dig = []
+        for i in range(n):
+            for j in range(m):
+                if i == j:
+                    dig.append(matrix[i][j])
+                elif i>j:
+                    if i-j not in acs:
+                        acs[i-j]=[matrix[i][j]]
+                    else:
+                        acs[i-j].append(matrix[i][j])
+                else:
+                    if j-i not in des:
+                        des[j-i]=[matrix[i][j]]
+                    else:
+                        des[j-i].append(matrix[i][j])
+        for i in acs:
+            acs[i].sort()
+        for i in des:
+            des[i].sort()
+            des[i]=des[i][::-1]
+        for i in range(n):
+            for j in range(m):
+                if i==j:
+                    matrix[i][j]=dig.pop(0)
+                elif i>j:
+                    matrix[i][j]=acs[i-j].pop(0)
+                else:
+                    matrix[i][j]=des[j-i].pop(0)
+        return matrix            
