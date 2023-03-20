@@ -1,0 +1,13 @@
+def findMissing(A,B,N,M):
+    # code here
+    ans = []
+    d = {}
+    for i in B:
+        if i in d:
+            d[i] += 1
+        else:
+            d[i] = 1
+    for i in A:
+        if i not in d:
+            ans.append(i)
+    return ans
