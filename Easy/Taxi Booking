@@ -1,0 +1,13 @@
+class Solution:
+    def minimumTime(self, N : int, cur : int, pos : List[int], time : List[int]) -> int:
+        # code here
+        
+        mini = 100000000000000
+        a = b = 0
+        for i in range(len(pos)):
+            a = abs(pos[i]-cur)
+            b = a*time[i]
+            mini = min(b,mini)
+        return mini
+            
+
