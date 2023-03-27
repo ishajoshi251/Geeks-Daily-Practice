@@ -1,0 +1,36 @@
+class Solution:
+    
+    #Function to return list containing vertices in Topological order.
+    def dfs(self, node, visited, st, adj):
+
+        visited[node] = 1
+
+        for i in adj[node]:
+
+            if visited[i] == 0:
+
+                self.dfs(i, visited, st, adj)
+
+        st.append(node)
+    def topoSort(self, V, adj):
+        # Code here
+       
+        visited = [0] * V
+
+        st = []
+
+        for i in range(V):
+
+            if visited[i] == 0:
+
+                self.dfs(i, visited, st, adj)
+
+        ans = []
+
+        while len(st) != 0:
+
+            val = st.pop()
+
+            ans.append(val)
+
+        return ans
