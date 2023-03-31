@@ -1,0 +1,8 @@
+def rotate(matrix): 
+    #code here
+    for i in range(len(matrix)):
+        for j in range(0,i):
+            matrix[i][j],matrix[j][i] = matrix[j][i],matrix[i][j]
+    for i in range(len(matrix)//2):
+        matrix[i],matrix[-1-i] = matrix[-1-i],matrix[i]
+    return matrix
