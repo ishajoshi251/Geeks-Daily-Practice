@@ -1,4 +1,0 @@
-class Solution:
-	def nthStair(self,n):
-		# Code here
-        return int(1+(n/2))
