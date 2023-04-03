@@ -1,0 +1,26 @@
+class Solution:
+    
+    #Function to detect cycle in a directed graph.
+    def isCyclic(self, V, adj):
+        # code here
+        visited=[False]*(V)
+        recSt=[False]*(V)
+        def DFSrec(adj, s, visited, recSt):
+            
+            visited[s]=True
+            recSt[s]=True
+            for u in adj[s]:
+                if recSt[u]==True:
+                    return True
+                if visited[u]==False:
+                    if DFSrec(adj, u, visited, recSt)==True:
+                        return True
+                
+            recSt[s]=False
+            return False
+        
+        for i in range(V):
+            if visited[i]==False:
+                if DFSrec(adj, i, visited, recSt)==True:
+                    return True
+        return False
