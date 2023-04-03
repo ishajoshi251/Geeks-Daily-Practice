@@ -1,0 +1,30 @@
+from typing import List
+from sys import setrecursionlimit
+setrecursionlimit(10**6)
+class Solution:    
+    def eventualSafeNodes(self, V : int, adj : List[List[int]]) -> List[int]:
+        # code here
+        vis=[-1]*V
+        pathvis=[-1]*V
+        def dfs(check,node,vis,pathvis,adj):
+            vis[node]=1
+            pathvis[node]=1
+            check[node]=0
+            for it in adj[node]:
+                if vis[it]==-1:
+                    if dfs(check,it,vis,pathvis,adj)==True:
+                        return True
+                elif pathvis[it]:
+                    return True
+            check[node]=1
+            pathvis[node]=0
+            return False
+        ans=[]
+        check=[0]*V
+        for i in range(V):
+            if vis[i]==-1:
+                dfs(check,i,vis,pathvis,adj)
+        for i in range(V):
+            if check[i]==1:
+                ans.append(i)
+        return ans 
