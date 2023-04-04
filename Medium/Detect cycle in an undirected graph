@@ -1,0 +1,21 @@
+from typing import List
+class Solution:
+    #Function to detect cycle in an undirected graph.
+   
+	def isCycle(self, V: int, adj: List[List[int]]) -> bool:
+		#Code here
+		vis = [0]*V
+		def dfs(node,parent,vis,adj):
+            vis[node] = 1
+            for i in range(len(adj[node])):
+                if  vis[i] == 0:
+                    if dfs(i,node,vis,adj) == True:
+                        return True
+                elif i != parent:
+                    return True
+            return False
+        for i in range(V):
+            if vis[i] == 0:
+               if  dfs(i,-1,vis,adj) == True:
+                   return True
+        return False
