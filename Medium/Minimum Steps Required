@@ -1,0 +1,22 @@
+class Solution:
+    def minSteps(self, str : str) -> int:
+        # code here
+        ac= 0
+        bc = 0
+        i = 0
+        
+        while i<len(str):
+            if str[i] == 'a':
+                while i<len(str) and str[i] == 'a':
+                    i += 1
+                ac +=1
+            else:
+                while i<len(str) and str[i] == 'b':
+                    i += 1
+                bc += 1
+            
+            
+            
+                
+                
+        return min(ac,bc)+1
