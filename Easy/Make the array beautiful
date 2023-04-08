@@ -1,0 +1,23 @@
+
+from typing import List
+
+class Solution:
+    def makeBeautiful(self, arr: List[int]) -> List[int]:
+        # code here
+        stack = []
+        stack.append(arr[0])
+        i = 1
+        while i<len(arr):
+            if stack:
+                a = stack [-1]
+                if (arr[i]>= 0 and a>=0) or (arr[i]< 0 and a<0):
+                    stack.append(arr[i])
+                else:
+                    stack.pop()
+                
+            else:
+                stack.append(arr[i])
+            i += 1
+                    
+        return stack
+            
