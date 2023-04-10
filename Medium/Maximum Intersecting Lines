@@ -1,0 +1,20 @@
+ mp = {}
+        for it in lines:
+            start = it[0]
+            end = it[1] + 1
+            if start in mp:
+                mp[start] += 1
+            else:
+                mp[start] = 1
+            if end in mp:
+                mp[end] -= 1
+            else:
+                mp[end] = -1
+    
+        prefix = 0
+        ans = 1
+        for key in sorted(mp.keys()):
+            prefix += mp[key]
+            ans = max(ans, prefix)
+    
+        return ans
