@@ -1,0 +1,14 @@
+#User function Template for python3
+
+class Solution():
+    def solve(self, a, b, c):
+        #your code goes here
+         if a>2*(b+c+1):
+            return -1
+         elif b>2*(a+c+1):
+             return -1
+         elif c>2*(b+a+1):
+             return -1
+         else:
+             return a+b+c
+        
