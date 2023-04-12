@@ -1,0 +1,22 @@
+from typing import List
+
+
+class Solution:
+    def dominantPairs(self, n : int, arr : List[int]) -> int:
+        # code here
+        
+        first = arr[:n//2]
+        second = arr[n//2:]
+        first.sort(reverse= True)
+        second.sort(reverse= True)
+        count = 0
+        i = 0
+        j = 0
+        while i<n//2 and j<n//2:
+            if first[i]>=5*second[j]:
+                count += (n//2 - j)
+                i += 1
+            else:
+                j += 1
+            
+        return count
