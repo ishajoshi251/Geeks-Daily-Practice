@@ -1,0 +1,28 @@
+class Solution:
+    
+    #Function to find the vertical order traversal of Binary Tree.
+    def verticalOrder(self, root): 
+        #Your code here
+        d = {}
+        q = []
+        q.append([root,0])
+        while q:
+            curr = q[0][0]
+            level = q[0][1]
+            q.pop(0)
+            if level in d:
+                d[level].append(curr.data)
+            else:
+                d[level] = [curr.data]
+            if curr.left:
+                q.append([curr.left,level-1])
+            if curr.right:
+                q.append([curr.right,level+1])
+        temp = []
+        for i in sorted(d.keys()):
+            temp.append(d[i])
+        ans = []
+        for i in temp:
+            for j in i:
+                ans.append(j)
+        return ans
