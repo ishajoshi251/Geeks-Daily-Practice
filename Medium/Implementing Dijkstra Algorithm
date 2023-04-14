@@ -1,0 +1,22 @@
+from typing import List
+import sys
+class Solution:
+
+    #Function to find the shortest distance of all the vertices
+    #from the source vertex S.
+    def dijkstra(self, V, adj, src):
+        #code here [dist,node]
+       
+
+
+        dist = [sys.maxsize] * V
+        dist[src] = 0
+        st = {(0, src)}
+        while st:
+            node_dist, node = st.pop()
+            for neighbor, neighbor_dist in adj[node]:
+                if node_dist + neighbor_dist < dist[neighbor]:
+                    st.discard((dist[neighbor], neighbor))
+                    dist[neighbor] = node_dist + neighbor_dist
+                    st.add((dist[neighbor], neighbor))
+        return dist
