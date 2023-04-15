@@ -1,0 +1,42 @@
+class Solution:
+    def findOrder(self, n, m, prerequisites):
+        # Code here
+        
+        adj = [[] for i in range(n)]
+        for i in range(len(prerequisites)):
+            adj[prerequisites[i][1]].append(prerequisites[i][0])
+        
+       
+    
+       
+        
+        indegree = [0] * n
+        
+        for i in range(n):
+            for it in adj[i]:
+                indegree[it] += 1
+                
+        ans = []
+        
+        q = []
+        
+        
+        for i in range(n):
+            if indegree[i] == 0:
+                q.append(i)
+                
+        while q:
+            a = q.pop(0)
+            ans.append(a)
+            
+            for it in adj[a]:
+                indegree[it] -= 1
+                if indegree[it] == 0:
+                    q.append(it)
+        
+        if len(ans) == n:
+            return ans
+        else:
+            return []
+
+            
