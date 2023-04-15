@@ -1,0 +1,62 @@
+class Solution:
+    def isPossible(self,n,prerequisites):
+        #code here\
+        
+        adj = [[] for i in range(n)]
+        for i in range(len(prerequisites)):
+            adj[prerequisites[i][0]].append(prerequisites[i][1])
+        
+       
+    
+        '''
+        indegree = [0]*n
+        for i in range(n):
+            for j in adj[i]:
+                indegree[j] += 1
+                
+        q = []
+        for i in range(n):
+            if indegree[i] == 0:
+                q.append(i)
+        topo = []
+        while q:
+            top = q[0]
+            q.pop(0)
+            topo.append(top)
+            for i in adj[top]:
+                indegree[i] -= 1
+                if indegree == 0:
+                    q.append(i)
+        for i in range(n):
+            if indegree[i] != 0:
+                return False
+        return True
+        '''
+        
+        indegree = [0] * n
+        
+        for i in range(n):
+            for it in adj[i]:
+                indegree[it] += 1
+                
+        ans = []
+        
+        q = []
+        
+        
+        for i in range(n):
+            if indegree[i] == 0:
+                q.append(i)
+                
+        while q:
+            a = q.pop(0)
+            ans.append(a)
+            
+            for it in adj[a]:
+                indegree[it] -= 1
+                if indegree[it] == 0:
+                    q.append(it)
+        
+        return len(ans) == n
+
+            
