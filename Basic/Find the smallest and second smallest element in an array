@@ -1,0 +1,7 @@
+def minAnd2ndMin( a, n):
+    #code here
+    if n == 1 or len(set(a))==1:
+        return [-1,-1]
+    a = list(set(a))
+    a.sort()
+    return [a[0],a[1]]
