@@ -1,0 +1,40 @@
+#User function Template for python3
+
+from typing import List
+
+class Solution:
+    
+    def shortestPath(self, grid: List[List[int]], source: List[int], destination: List[int]) -> int:
+        # code here
+        
+        row = len(grid)
+        col = len(grid[0])
+        direction = [(-1,0),(0,1),(1,0),(0,-1)]
+        q = []
+        dist  = [[float('inf') for j in range(col)]for i in range(row)]
+       
+        r=source[0]
+        c = source[1] 
+        dist[r][c] = 0
+        if grid[r][c] == 0:
+            return -1
+        if source == destination:
+            return 0
+        q.append([r,c,dist[r][c]])
+        while q:
+            currrow = q[0][0]
+            currcol = q[0][1]
+            currdis = q[0][2]
+            q.pop(0)
+            for dr,dc in direction:
+                nrow = currrow + dr
+                ncol = currcol + dc
+                if nrow>= 0 and nrow<row and ncol>=0 and ncol<col and grid[nrow][ncol] != 0:
+                    if dist[nrow][ncol]>currdis+1:
+                        dist[nrow][ncol]=currdis+1
+                        q.append([nrow,ncol,dist[nrow][ncol]])
+        r1 = destination[0]
+        c1 = destination[1]
+        if dist[r1][c1] == float('inf'):
+            return -1
+        return dist[r1][c1]
