@@ -1,0 +1,30 @@
+from typing import List
+
+
+class Solution:
+    def makePalindrome(self, n : int, arr : List[str]) -> bool:
+        # code here
+               
+        mp = {}
+    
+        for i in arr:
+             s = i
+             s = s[::-1]
+             if s in mp:
+                del mp[s]
+             else:
+                mp[i] = 1
+    
+        if len(mp) == 0:
+            return True
+    
+        if len(mp) == 1:
+            for k, v in mp.items():
+                s = k
+                rs = k[::-1]
+                if s == rs:
+                    return True
+                else:
+                    return False
+    
+        return False
